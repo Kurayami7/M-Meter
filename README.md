@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Melody-Meter
+A mobile and pervasive computing project delivering a community-driven music rating application
+=======
+<<<<<<< HEAD
 # 🎥 Movies App
 
 The Movies App is an Android application built using Kotlin and follows the MVVM (Model-View-ViewModel) architectural pattern. It utilizes various libraries and components such as Flow, XML, Room, Retrofit, Dagger Hilt, and modularization. The app provides several features for movie enthusiasts, including user authentication, movie search, trivia game, YouTube trailer playback, movie rating, review viewing, movie filtering, watch history, favorites, and user profile.
@@ -86,3 +91,8 @@ Ensure that you have the necessary dependencies and API keys set up, such as TMD
 The Movies App is a comprehensive Android application that combines several features for movie enthusiasts. It follows the MVVM architectural pattern, utilizes various libraries and components, and employs modularization for better code organization and maintainability. Feel free to customize and extend the app according to your specific requirements and preferences.
 
 Note: In the View Model layer, StateFlow or SharedFlow can be used instead of LiveData to handle asynchronous updates of UI-related data and events. StateFlow provides a state-based approach for managing UI states, while SharedFlow can be used for handling UI events. Use these flow-based approaches based on your specific needs and preferences.
+=======
+# Melody-Meter
+A mobile and pervasive computing project delivering a community-driven music rating application
+>>>>>>> cad5825d (Initial commit)
+>>>>>>> parent of b4dd9a1a (Removed files)
