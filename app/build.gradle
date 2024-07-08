@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.dagger.hilt.android'
+    id("com.google.gms.google-services")
 }
 
 def localProperties = new Properties()
@@ -62,6 +63,7 @@ dependencies {
     implementation "androidx.core:core-ktx:$androidXVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "com.google.android.material:material:$materialVersion"
+    implementation 'com.google.firebase:firebase-auth-ktx:23.0.0'
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitTestVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoTestVersion"
@@ -94,4 +96,5 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofitLoggingVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
 }
