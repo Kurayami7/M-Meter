@@ -33,7 +33,10 @@ class LoginViewModel @Inject constructor(
             val userName = _state.value.userName
             val password = _state.value.password
             _state.update { it.copy(isLoading = true) }
-            when (loginUseCase(userName, password)) {
+            val loginResult = loginUseCase(userName, password)
+            _state.update { it.copy(isLoading = false) }
+
+            when (loginResult) {
                 LoginError.USER_NAME_ERROR -> updateStateToUserNameError()
                 LoginError.PASSWORD_ERROR -> updateStateToPasswordError()
                 LoginError.REQUEST_ERROR -> updateStateToRequestError()
@@ -47,8 +50,11 @@ class LoginViewModel @Inject constructor(
                         )
                     }
                 }
+                // Handle the new error types
+                LoginError.INVALID_CREDENTIALS -> sendEvent(LoginUiEvent.ShowSnackBar(stringsRes.invalidCredentials))
+                LoginError.INVALID_USER -> sendEvent(LoginUiEvent.ShowSnackBar(stringsRes.invalidUser))
+                LoginError.USER_ALREADY_EXISTS -> sendEvent(LoginUiEvent.ShowSnackBar(stringsRes.userAlreadyExists))
             }
-            _state.update { it.copy(isLoading = false) }
         }
     }
 

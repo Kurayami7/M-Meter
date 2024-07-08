@@ -1,6 +1,9 @@
 package com.chocolatecake.bases
 
 interface StringsRes {
+    val invalidUser: String
+    val userAlreadyExists: String
+    val invalidCredentials: String
     val theRequestFailed: String
     val passwordIsRequired: String
     val usernameIsRequired: String
