@@ -5,6 +5,9 @@ buildscript {
 
         def nav_version = "2.5.3"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        // Adding the latest Android Gradle Plugin version to prevent annoying warnings
+        classpath 'com.android.tools.build:gradle:8.1.0'
     }
 }
 
@@ -18,8 +21,8 @@ ext {
     // Sdk and tools
     // Support library and architecture components support minSdk 14 and above.
     minSdkVersion = 24
-    targetSdkVersion = 33
-    compileSdkVersion = 33
+    targetSdkVersion = 34
+    compileSdkVersion = 34
 
     // App dependencies
     androidXVersion = '1.10.1'

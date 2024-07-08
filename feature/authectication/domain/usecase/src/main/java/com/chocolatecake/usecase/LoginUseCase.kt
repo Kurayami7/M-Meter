@@ -1,23 +1,23 @@
 package com.chocolatecake.usecase
 
 import com.chocolatecake.repository.AuthRepository
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
-class LoginUseCase @Inject constructor(
-    private val authRepository: AuthRepository,
-    private val getIsValidLoginUseCase: GetIsValidLoginUseCase
-) {
-    suspend operator fun invoke(username: String, password: String): LoginError {
-        val inputErrors = getIsValidLoginUseCase(username, password)
-        return if (inputErrors != LoginError.NO_INPUT_ERRORS) {
-            inputErrors
-        } else {
-            try {
-                authRepository.login(username, password)
-                LoginError.SUCCESS
-            } catch (throwable: Throwable) {
-                LoginError.REQUEST_ERROR
-            }
+class LoginUseCase @Inject constructor(private val auth: FirebaseAuth) {
+
+    suspend operator fun invoke(userName: String, password: String): LoginError {
+        // Basic input validation (you might have more robust checks)
+        if (userName.isBlank()) return LoginError.USER_NAME_ERROR
+        if (password.isBlank()) return LoginError.PASSWORD_ERROR
+
+        return try {
+            auth.signInWithEmailAndPassword(userName, password).await() // Use Firebase Auth
+            LoginError.SUCCESS
+        } catch (e: Exception) {
+            // Handle Firebase Authentication exceptions (e.g., invalid credentials)
+            LoginError.REQUEST_ERROR
         }
     }
 }
