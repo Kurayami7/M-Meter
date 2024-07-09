@@ -68,4 +68,7 @@
     <string name="email" translatable="false">Email</string>
     <string name="confirm_password" translatable="false">Confirm Password</string>
     <string name="register" translatable="false">Register</string>
+    <string name="register_title" translatable="false">Register</string>
+    <string name="username_hint" translatable="false">Username</string>
+    <string name="confirm_password_hint" translatable="false">Confirm Password</string>
 </resources>

@@ -24,9 +24,10 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch { state.collectLatest { it.log() } }
     }
 
+/*    // Migrated to RegistrationViewModel.kt
     fun onClickSignUp() {
         sendEvent(LoginUiEvent.SignUpEvent)
-    }
+    }*/
 
     fun login() {
         viewModelScope.launch {

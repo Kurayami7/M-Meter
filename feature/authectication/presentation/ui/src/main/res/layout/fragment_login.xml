@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.chocolatecake.viewmodel.LoginViewModel" />
+
+        <variable
+            name="registrationViewModel"
+            type="com.chocolatecake.viewmodel.register.RegistrationViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -114,6 +117,7 @@
                 android:text="@={viewModel.state.userName}"
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/on_background_60"
+                android:hint="@string/username_hint"
                 app:setTipError="@{viewModel.state.userNameError}" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -174,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_tiny_4dp"
-            android:onClick="@{() -> viewModel.onClickSignUp()}"
+            android:onClick="@{() -> registrationViewModel.onClickRegister()}"
             android:text="@string/signup"
             android:textColor="@color/primary"
             app:layout_constraintBottom_toBottomOf="@+id/textview_do_u_have_account"

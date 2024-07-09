@@ -12,6 +12,11 @@ import javax.inject.Singleton
 class StringsResImpl @Inject constructor(
     @ApplicationContext private val context: Context,
 ) : StringsRes {
+    override val invalidUser: String = "Invalid user"
+    override val userAlreadyExists: String = "User already exists in the database"
+
+    override val invalidCredentials: String = "Invalid Credentials"
+
     override val theRequestFailed: String = getString(R.string.the_request_failed)
 
     override val passwordIsRequired: String = getString(R.string.password_is_required)

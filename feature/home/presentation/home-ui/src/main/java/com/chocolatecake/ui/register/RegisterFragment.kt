@@ -1,8 +1,9 @@
-/*
-package com.chocolatecake.ui.profile
+package com.chocolatecake.ui.register
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -10,13 +11,12 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.chocolatecake.bases.BaseFragment
 import com.chocolatecake.ui.home.R
-import com.chocolatecake.ui.home.databinding.FragmentRegisterBinding // Update binding import
+import com.chocolatecake.ui.home.databinding.FragmentRegisterBinding
 import com.chocolatecake.viewmodel.register.RegistrationUIState
 import com.chocolatecake.viewmodel.register.RegistrationUiEvent
 import com.chocolatecake.viewmodel.register.RegistrationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import com.chocolatecake.viewmodel.register.RegistrationViewModel
 
 @AndroidEntryPoint
 class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegistrationUIState, RegistrationUiEvent>() {
@@ -27,27 +27,27 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegistrationUISta
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observe registration state and handle UI updates
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { state ->
-                    if (state.isSuccess) {
-                        // Registration successful, navigate to login screen
-                        findNavController().navigate(R.id.action_registerFragment_to_profileFragment)
-                    } else if (state.error != null) {
-                        // Display error message (using a Snackbar or Toast)
-                        showError(state.error)
-                    }
-                    // Update UI based on loading state (show/hide progress bar)
-                    showLoading(state.isLoading)
+                    handleUIState(state)
                 }
             }
         }
 
-        // Set click listener for the "Register" button
         binding.buttonRegister.setOnClickListener {
             viewModel.onClickRegister()
         }
+    }
+
+    private fun handleUIState(state: RegistrationUIState) {
+        binding.progressBar.isVisible = state.isLoading
+        if (state.isSuccess) {
+            findNavController().navigate(R.id.action_registerFragment_to_profileFragment)
+        } else if (state.error != null) {
+            showError(state.error!!)
+        }
+        showLoading(state.isLoading)
     }
 
     override fun onEvent(event: RegistrationUiEvent) {
@@ -55,10 +55,12 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegistrationUISta
     }
 
     private fun showError(errorMessage: String) {
-        // Implement your error display logic here (Snackbar, Toast, etc.)
+        Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
     }
 
     private fun showLoading(isLoading: Boolean) {
-        // Implement your loading state UI logic here (show/hide progress bar)
+        binding.progressBar.isVisible = isLoading
+        // You might want to disable the button while loading
+        binding.buttonRegister.isEnabled = !isLoading
     }
-}*/
+}
