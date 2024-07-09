@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1016595457188",
+    "project_id": "melody-meter",
+    "storage_bucket": "melody-meter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016595457188:android:abce6cbad49703f360b231",
+        "android_client_info": {
+          "package_name": "com.chocolatecake.movieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhNguJv9eqf_vhKGZZqylVGMmNSMR9viw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

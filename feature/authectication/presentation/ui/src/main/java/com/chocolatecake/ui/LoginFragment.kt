@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
@@ -30,7 +31,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        auth = Firebase.auth // Initialize Firebase Auth
+        auth = Firebase.auth
         handleKeyboardAppearanceEvent()
     }
 
@@ -64,11 +65,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
     override fun onEvent(event: LoginUiEvent) {
         when (event) {
             is LoginUiEvent.NavigateToHomeScreen -> {
+                Log.d("LoginFragment", "Navigating to home screen")
                 val navController = findNavController()
                 navController.popBackStack(navController.graph.startDestinationId, false)
                 navController.navigate(event.id)
 
-                // Handle Firebase user after successful login
                 val firebaseUser = auth.currentUser
                 if (firebaseUser != null) {
                     // TODO: Display user information (e.g., in a TextView you'll add to the layout)
