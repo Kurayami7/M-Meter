@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.chocolatecake.bases.BaseFragment
 import com.chocolatecake.bases.ListName
@@ -16,6 +19,7 @@ import com.chocolatecake.viewmodel.profile.ProfileUiEvent
 import com.chocolatecake.viewmodel.profile.ProfileViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileUIState, ProfileUiEvent>() {
@@ -30,6 +34,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileUIState, Pro
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         changeAppTheme()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.state.collect { state ->
+                    // Directly set visibility based on isLoggedIn
+                    binding.whenUserLoggedin.visibility = if (state.isLoggedIn) View.VISIBLE else View.GONE
+                    binding.whenUserNotLoggedin.visibility = if (state.isLoggedIn) View.GONE else View.VISIBLE
+                }
+            }
+        }
     }
 
     override fun onEvent(event: ProfileUiEvent) {

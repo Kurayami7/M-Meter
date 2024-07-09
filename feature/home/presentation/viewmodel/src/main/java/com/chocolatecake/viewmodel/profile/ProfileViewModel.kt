@@ -6,6 +6,7 @@ import com.chocolatecake.bases.NavigationRes
 import com.chocolatecake.usecase.profile.CheckIsUserLoggedInUseCase
 import com.chocolatecake.usecase.profile.GetAccountDetailsUseCase
 import com.chocolatecake.usecase.profile.LogoutUseCase
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -17,11 +18,22 @@ class ProfileViewModel @Inject constructor(
     private val logoutUseCase: LogoutUseCase,
     private val profileUiMapper: ProfileUiMapper,
     private val checkIsUserLoggedInUseCase: CheckIsUserLoggedInUseCase,
-    private val navigationRes: NavigationRes
+    private val navigationRes: NavigationRes,
+    private val auth: FirebaseAuth // Inject FirebaseAuth
+
 ) : BaseViewModel<ProfileUIState, ProfileUiEvent>(ProfileUIState()), ProfileListener {
 
     init {
         getAccountDetails()
+
+        // Add authentication state listener
+        auth.addAuthStateListener { firebaseAuth ->
+            val isLoggedIn = firebaseAuth.currentUser != null
+            _state.update { it.copy(isLoggedIn = isLoggedIn) }
+            if (isLoggedIn) {
+                getAccountDetails() // Fetch user details if logged in
+            }
+        }
     }
 
     private fun getAccountDetails() {
