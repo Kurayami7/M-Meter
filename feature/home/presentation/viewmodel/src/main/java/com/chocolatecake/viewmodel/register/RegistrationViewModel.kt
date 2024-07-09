@@ -1,8 +1,10 @@
 package com.chocolatecake.viewmodel.register
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chocolatecake.bases.BaseViewModel
+import com.chocolatecake.viewmodel.LoginUiEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -29,23 +31,31 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
     }
 
     fun onClickRegister() {
+        Log.d("RegistrationViewModel", "onClickRegister called") // Log entry point
         viewModelScope.launch {
             // 1. Validating input (check for empty fields, password match, etc.)
             if (!isValidInput()) {
+                Log.w("RegistrationViewModel", "Invalid input")
                 _state.value = RegistrationUIState(error = "Invalid input")
                 return@launch
             }
 
+            Log.d("RegistrationViewModel", "Input is valid, starting registration")
             // 2. Setting loading state
             _state.value = RegistrationUIState(isLoading = true)
 
             // 3. Performing registration (communicate with Firebase Authentication)
             try {
                 val result = auth.createUserWithEmailAndPassword(email.value, password.value).await()
-                // Registration successful - you can access the new user with result.user
-                _state.value = RegistrationUIState(isSuccess = true)
+
+                Log.d("RegistrationViewModel", "Registration successful") //
+
+                // Update the state to indicate successful registration
+                _state.value = RegistrationUIState(registrationSuccess = true)
+
             } catch (e: Exception) {
                 // Handle registration errors (e.g., email already in use, weak password)
+                Log.e("RegistrationViewModel", "Registration failed: ${e.message}", e)
                 _state.value = RegistrationUIState(error = e.message, isLoading = false)
             }
         }
