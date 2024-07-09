@@ -65,4 +65,7 @@
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
     <string name="please_rate_first">Please Rate First</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
+    <string name="register" translatable="false">Register</string>
 </resources>
