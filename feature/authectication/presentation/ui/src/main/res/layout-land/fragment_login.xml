@@ -7,6 +7,10 @@
         <variable
             name="viewModel"
             type="com.chocolatecake.viewmodel.LoginViewModel" />
+
+        <variable
+            name="registrationViewModel"
+            type="com.chocolatecake.viewmodel.register.RegistrationViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -53,7 +57,8 @@
             android:text="@string/username"
             android:textColor="@color/on_background_60"
             app:layout_constraintStart_toStartOf="@+id/edittext_username"
-            app:layout_constraintTop_toTopOf="@+id/view_background" />
+            app:layout_constraintTop_toTopOf="@+id/view_background"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edittext_password"
@@ -79,6 +84,7 @@
                 android:text="@={viewModel.state.password}"
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/on_background_60"
+                android:hint="@string/password_hint"
                 app:setTipError="@{viewModel.state.passwordError}" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -99,13 +105,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_background"
                 android:inputType="textPersonName"
-                android:maxLines="1"
                 android:maxLength="24"
+                android:maxLines="1"
                 android:padding="@dimen/spacing_medium_16dp"
                 android:text="@={viewModel.state.userName}"
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/on_background_60"
-                app:setTipError="@{viewModel.state.userNameError}" />
+                app:setTipError="@{viewModel.state.userNameError}"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -165,7 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_tiny_4dp"
-            android:onClick="@{() -> viewModel.onClickSignUp()}"
+            android:onClick="@{() -> registrationViewModel.onClickRegister()}"
             android:text="@string/signup"
             android:textColor="@color/primary"
             app:layout_constraintBottom_toBottomOf="@+id/textview_do_u_have_account"

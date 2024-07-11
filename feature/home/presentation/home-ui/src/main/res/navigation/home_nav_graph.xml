@@ -74,7 +74,25 @@
         <action
             android:id="@+id/action_profileFragment_to_watchHistoryFragment"
             app:destination="@id/watchHistoryFragment" />
+
+        <action
+            android:id="@+id/action_profileFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.chocolatecake.ui.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
 
     <include app:graph="@navigation/game_nav_graph" />
 
@@ -186,18 +204,18 @@
     </fragment>
     <fragment
         android:id="@+id/myListFragment"
-        tools:layout="@layout/fragment_my_list"
         android:name="com.chocolatecake.ui.my_list.MyListFragment"
-        android:label="MyListFragment" >
+        android:label="MyListFragment"
+        tools:layout="@layout/fragment_my_list">
         <action
             android:id="@+id/action_myListFragment_to_myListDetailsFragment"
             app:destination="@id/myListDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myListDetailsFragment"
-        tools:layout="@layout/fragment_my_list_details"
         android:name="com.chocolatecake.ui.my_list_details.MyListDetailsFragment"
-        android:label="MyListDetailsFragment" >
+        android:label="MyListDetailsFragment"
+        tools:layout="@layout/fragment_my_list_details">
         <argument
             android:name="listId"
             app:argType="integer" />
@@ -246,7 +264,7 @@
     <fragment
         android:id="@+id/myRatedFragment"
         android:name="com.chocolatecake.ui.my_rated.MyRatedFragment"
-        android:label="MyRatedFragment" >
+        android:label="MyRatedFragment">
         <action
             android:id="@+id/action_myRatedFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
@@ -257,7 +275,7 @@
     <fragment
         android:id="@+id/peopleDetailsFragment"
         android:name="com.chocolatecake.ui.people.PeopleDetailsFragment"
-        android:label="PeopleDetailsFragment" >
+        android:label="PeopleDetailsFragment">
         <argument
             android:name="personId"
             app:argType="integer" />
