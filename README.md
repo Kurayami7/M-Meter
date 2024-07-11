@@ -3,9 +3,10 @@ A mobile and pervasive computing project delivering a community-driven music rat
 
 ## How To Get It Up & Running:
 1. Sign up into TMDB and head over to their API page: https://www.themoviedb.org/settings/api
-2. Register for an API and navigate into core/data/remote/build.gradle. Look carefully at how the build is set up.
+2. Register for an API [No longer required] and navigate into core/data/remote/build.gradle. Look carefully at how the build is set up.
 3. Navigate into local.properties and set the 'API_KEY="XYZ" ## Change this to your own API key' to the API you received after registration.
-4. Build the project and run it. 
+4. In the local.properties, change this directory to the directory where you have your Android SDK: sdk.dir=C\:\\Users\\areaf\\AppData\\Local\\Android\\Sdk
+5. Build the project and run it. 
 
 ## How To Use The Android Debug Bridge (adb) 
 1. Locate the adb executable
