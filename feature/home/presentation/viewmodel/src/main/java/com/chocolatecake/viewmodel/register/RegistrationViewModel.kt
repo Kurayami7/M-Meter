@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chocolatecake.bases.BaseViewModel
+import com.chocolatecake.bases.NavigationRes
 import com.chocolatecake.viewmodel.LoginUiEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -33,7 +34,7 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
     fun onClickRegister() {
         Log.d("RegistrationViewModel", "onClickRegister called") // Log entry point
         viewModelScope.launch {
-            // 1. Validating input (check for empty fields, password match, etc.)
+            // 1. Validating input (checking for empty fields, password match, etc.)
             if (!isValidInput()) {
                 Log.w("RegistrationViewModel", "Invalid input")
                 _state.value = RegistrationUIState(error = "Invalid input")
@@ -62,7 +63,7 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
     }
 
     private fun isValidInput(): Boolean {
-        // Add more validation rules here (email format, password strength, etc.)
+        // Need to add more validation rules here (email format, password strength, etc.)
         return email.value.isNotBlank() &&
                 password.value.isNotBlank() &&
                 password.value == confirmPassword.value

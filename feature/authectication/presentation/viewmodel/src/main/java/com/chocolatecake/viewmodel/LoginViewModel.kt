@@ -3,22 +3,32 @@ package com.chocolatecake.viewmodel
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.chocolatecake.bases.BaseViewModel
-import com.chocolatecake.bases.NavigationRes
 import com.chocolatecake.bases.StringsRes
 import com.chocolatecake.usecase.LoginError
 import com.chocolatecake.usecase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
+import com.chocolatecake.bases.NavigationRes as NavigationRes1
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
     private val stringsRes: StringsRes,
-    private val navigationRes: NavigationRes,
+    private val navigationRes: NavigationRes1,
 ) : BaseViewModel<LoginUiState, LoginUiEvent>(LoginUiState()) {
+
+    private val email = MutableStateFlow("")
+    private val password = MutableStateFlow("")
+    private val confirmPassword = MutableStateFlow("")
+    private lateinit var auth: FirebaseAuth
 
     init {
         viewModelScope.launch { state.collectLatest { it.log() } }
@@ -59,6 +69,45 @@ class LoginViewModel @Inject constructor(
         }
     }
 
+    fun onClickSignUp() {
+        navigationRes.homeFeatureLink.log()
+        sendEvent(LoginUiEvent.SignUpEvent(navigationRes.homeFeatureLink))
+    }
+
+
+
+    fun onClickRegister() {
+        Log.d("RegistrationViewModel", "onClickRegister called") // Log entry point
+        viewModelScope.launch {
+            // 1. Validating input (checking for empty fields, password match, etc.)
+            if (!isValidInput()) {
+                Log.w("RegistrationViewModel", "Invalid input")
+                _state.value = LoginUiState(passwordError = "Invalid input")
+                return@launch
+            }
+
+            Log.d("RegistrationViewModel", "Input is valid, starting registration")
+            // 2. Setting loading state
+            _state.value = LoginUiState(isLoading = true)
+
+            // 3. Performing registration (communicate with Firebase Authentication)
+            try {
+                auth = Firebase.auth
+                val result = auth.createUserWithEmailAndPassword(email.value, password.value).await()
+
+                Log.d("RegistrationViewModel", "Registration successful") //
+
+                // Update the state to indicate successful registration
+                _state.value = LoginUiState(registrationSuccess = true)
+
+            } catch (e: Exception) {
+                // Handle registration errors (e.g., email already in use, weak password)
+                Log.e("RegistrationViewModel", "Registration failed: ${e.message}", e)
+                _state.value = LoginUiState(passwordError = e.message, isLoading = false)
+            }
+        }
+    }
+
     private fun updateStateToRequestError() {
         sendEvent(LoginUiEvent.ShowSnackBar(stringsRes.theRequestFailed))
     }
@@ -75,6 +124,13 @@ class LoginViewModel @Inject constructor(
         _state.update { it.copy(userNameError = null, passwordError = null, isLoading = false) }
         navigationRes.homeFeatureLink.log()
         sendEvent(LoginUiEvent.NavigateToHomeScreen(navigationRes.homeFeatureLink))
+    }
+
+    private fun isValidInput(): Boolean {
+        // Need to add more validation rules here (email format, password strength, etc.)
+        return email.value.isNotBlank() &&
+                password.value.isNotBlank() &&
+                password.value == confirmPassword.value
     }
 }
 
