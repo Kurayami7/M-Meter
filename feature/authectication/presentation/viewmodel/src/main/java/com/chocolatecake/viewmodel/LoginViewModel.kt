@@ -71,41 +71,7 @@ class LoginViewModel @Inject constructor(
 
     fun onClickSignUp() {
         navigationRes.homeFeatureLink.log()
-        sendEvent(LoginUiEvent.SignUpEvent(navigationRes.homeFeatureLink))
-    }
-
-
-
-    fun onClickRegister() {
-        Log.d("RegistrationViewModel", "onClickRegister called") // Log entry point
-        viewModelScope.launch {
-            // 1. Validating input (checking for empty fields, password match, etc.)
-            if (!isValidInput()) {
-                Log.w("RegistrationViewModel", "Invalid input")
-                _state.value = LoginUiState(passwordError = "Invalid input")
-                return@launch
-            }
-
-            Log.d("RegistrationViewModel", "Input is valid, starting registration")
-            // 2. Setting loading state
-            _state.value = LoginUiState(isLoading = true)
-
-            // 3. Performing registration (communicate with Firebase Authentication)
-            try {
-                auth = Firebase.auth
-                val result = auth.createUserWithEmailAndPassword(email.value, password.value).await()
-
-                Log.d("RegistrationViewModel", "Registration successful") //
-
-                // Update the state to indicate successful registration
-                _state.value = LoginUiState(registrationSuccess = true)
-
-            } catch (e: Exception) {
-                // Handle registration errors (e.g., email already in use, weak password)
-                Log.e("RegistrationViewModel", "Registration failed: ${e.message}", e)
-                _state.value = LoginUiState(passwordError = e.message, isLoading = false)
-            }
-        }
+        sendEvent(LoginUiEvent.SignUpEvent(navigationRes.signupFeatureLink))
     }
 
     private fun updateStateToRequestError() {
@@ -126,6 +92,7 @@ class LoginViewModel @Inject constructor(
         sendEvent(LoginUiEvent.NavigateToHomeScreen(navigationRes.homeFeatureLink))
     }
 
+    // Migrated to RegistrationViewModel.kt / Not in use at present
     private fun isValidInput(): Boolean {
         // Need to add more validation rules here (email format, password strength, etc.)
         return email.value.isNotBlank() &&

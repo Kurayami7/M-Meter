@@ -87,7 +87,8 @@ class ProfileViewModel @Inject constructor(
 
     fun logout() {
         viewModelScope.launch {
-            _state.update { it.copy(isLoggedIn = false) }
+            _state.update { it.copy(username = "", isLoggedIn = false) }
+            auth.signOut()
             logoutUseCase()
         }
     }

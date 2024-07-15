@@ -87,19 +87,17 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
             }
 
             is LoginUiEvent.SignUpEvent -> {
-                Log.d("LoginFragment", "Navigating to home screen via Signup")
+                Log.d("LoginFragment", "Navigating to register screen via Signup")
                 val navController = findNavController()
                 navController.popBackStack(navController.graph.startDestinationId, false)
                 navController.navigate(event.destinationID)
             }
 
-
-            else -> {
+            is LoginUiEvent.ShowSnackBar -> {
                 val keyboard = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 keyboard.hideSoftInputFromWindow(view?.windowToken, 0)
+                showSnackBar(event.message)
             }
         }
-
-
     }
 }
