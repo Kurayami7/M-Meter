@@ -21,6 +21,7 @@
     <string name="movie">Movie</string>
     <string name="tv">TV Shows</string>
     <string name="person">People</string>
+
     <string name="collection">Collection</string>
     <string name="company">Company</string>
     <string name="apply">Apply</string>

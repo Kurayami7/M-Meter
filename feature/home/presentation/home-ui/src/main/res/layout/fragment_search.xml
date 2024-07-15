@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:onClick="@{() -> viewModel.showResultMovie()}"
-                    android:text="@string/movie" />
+                    android:text="@string/song" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTV"
@@ -114,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> viewModel.showResultTv()}"
-                    android:text="@string/tv" />
+                    android:text="@string/album" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipPerson"
@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> viewModel.showResultPeople()}"
-                    android:text="@string/person" />
+                    android:text="@string/artist" />
 
             </com.google.android.material.chip.ChipGroup>
 

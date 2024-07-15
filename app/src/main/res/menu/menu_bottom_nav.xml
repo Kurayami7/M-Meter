@@ -7,7 +7,7 @@
     <item
         android:id="@id/tvFragment"
         android:icon="@drawable/ic_tv"
-        android:title="@string/tv" />
+        android:title="@string/albums" />
     <item
         android:id="@id/searchFragment"
         android:icon="@drawable/ic_search"
