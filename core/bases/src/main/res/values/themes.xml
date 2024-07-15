@@ -9,6 +9,8 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+
+
     <style name="Theme.MovieApp" parent="Base.Theme.MovieApp" />
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
@@ -17,19 +19,20 @@
 
         <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
              animated drawable. One of these is required. -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/animated_icon</item>
         <!-- Required for animated icons -->
-        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
 
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <!-- Required -->
         <item name="postSplashScreenTheme">@style/Theme.MovieApp</item>
     </style>
 
+
+
     <style name="MediaDetailsChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipStrokeColor">@color/on_background_38</item>
+
         <item name="chipBackgroundColor">@color/background</item>
-        <item name="chipStrokeWidth">1dp</item>
         <item name="android:textColor">@color/on_background_60</item>
     </style>
 
@@ -54,9 +57,8 @@
     <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="android:textColor">@color/on_background_60
         </item> <!-- Change the text color to red -->
-        <item name="chipStrokeColor">@color/on_background_38
-        </item> <!-- Change the border color to green -->
-        <item name="chipStrokeWidth">1dp</item> <!-- Set the border width to 2dp -->
+
+
     </style>
 
 
