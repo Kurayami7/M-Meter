@@ -15,7 +15,7 @@
     <string name="logout">تسجيل خروج</string>
     <string name="do_u_wanna_leave_us">هل تريد تركنا؟</string>
     <string name="_9_6" tools:ignore="ExtraTranslation">9.6</string>
-    <string name="explore_the_best_tv_shows" tools:ignore="ExtraTranslation">استكشف أفضل البرامج التلفزيونية</string>
+    <string name="explore_the_best_albums" tools:ignore="ExtraTranslation">استكشف أفضل البرامج التلفزيونية</string>
     <string name="airing_today" tools:ignore="ExtraTranslation">يعرض اليوم</string>
     <string name="empty_field">الرجاء ادخال اسم قائمة</string>
     <string name="number_of_movies">عدد الافلام: </string>
