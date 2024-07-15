@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="-60dp"
             android:scaleType="matrix"
-            android:src="@drawable/login_photo"
+            android:src="@drawable/login_photo1"
             app:layout_constraintBottom_toTopOf="@+id/view_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
