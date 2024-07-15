@@ -72,10 +72,11 @@
     <string name="register_title" translatable="false">Register</string>
     <string name="username_hint" translatable="false">Email Address</string>
     <string name="confirm_password_hint" translatable="false">Confirm Password</string>
-    <string name="home_much_you_love_this_song">How much did you love this song?</string>
-    <string name="Trendin_today">Trending Today</string>
-    <string name="song">Song</string>
-    <string name="albums">Albums</string>
-    <string name="artist">Artist</string>
-    <string name="album">Album</string>
+    <string name="home_much_you_love_this_song" translatable="false">How much did you love this song?</string>
+    <string name="Trendin_today" translatable="false">Trending Today</string>
+    <string name="song" translatable="false">Song</string>
+    <string name="albums" translatable="false">Albums</string>
+    <string name="artist" translatable="false">Artist</string>
+    <string name="album" translatable="false">Album</string>
+    <string name="register_image_description" translatable="false">Image of registration</string>
 </resources>
