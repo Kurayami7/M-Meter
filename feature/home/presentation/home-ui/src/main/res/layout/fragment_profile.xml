@@ -64,7 +64,7 @@
                 android:layout_marginBottom="@dimen/spacing_extra_extra_giant_56dp"
                 android:background="@drawable/button_retry"
                 android:onClick="@{()->viewModel.ocClickLogIn()}"
-                android:text="@string/login"
+                android:text="@string/login_signup"
                 android:textAllCaps="false"
                 android:textColor="@color/on_primary"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -13,7 +13,7 @@
     <string name="popcorn_puzzles">Popcorn Puzzles!</string>
     <string name="theme">Theme</string>
     <string name="logout">Logout</string>
-    <string name="do_u_wanna_leave_us">Really wnana Leave us?</string>
+    <string name="do_u_wanna_leave_us">Are you sure you want to log out?</string>
     <string name="_9_6" tools:ignore="ExtraTranslation">9.6</string>
     <string name="explore_the_best_tv_shows" tools:ignore="ExtraTranslation">Explore The Best TV Shows</string>
     <string name="airing_today" tools:ignore="ExtraTranslation">Airing Today</string>
@@ -34,6 +34,7 @@
     <string name="create" tools:ignore="ExtraTranslation">Create</string>
     <string name="login_title">Lights, Camera, Action! Login to Personalize Your Movie Experience</string>
     <string name="login">Login</string>
+    <string name="login_signup" translatable="false">Login or Signup</string>
     <string name="season">Season</string>
     <string name="number_of_movies">Number of Movies: </string>
     <string name="episode">Episode</string>
@@ -69,6 +70,7 @@
     <string name="confirm_password" translatable="false">Confirm Password</string>
     <string name="register" translatable="false">Register</string>
     <string name="register_title" translatable="false">Register</string>
-    <string name="username_hint" translatable="false">Username</string>
+    <string name="username_hint" translatable="false">Email Address</string>
     <string name="confirm_password_hint" translatable="false">Confirm Password</string>
+    <string name="register_image_description" translatable="false">Register Image</string>
 </resources>
