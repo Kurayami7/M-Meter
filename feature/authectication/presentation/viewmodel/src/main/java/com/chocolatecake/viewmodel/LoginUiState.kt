@@ -6,4 +6,5 @@ data class LoginUiState(
     var password: String = "",
     val passwordError: String? = null,
     val isLoading: Boolean = false,
+    val registrationSuccess: Boolean = true,
 )

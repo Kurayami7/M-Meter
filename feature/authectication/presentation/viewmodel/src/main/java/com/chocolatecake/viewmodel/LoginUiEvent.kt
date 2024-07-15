@@ -6,5 +6,5 @@ sealed interface LoginUiEvent {
 
     data class ShowSnackBar(val message: String) : LoginUiEvent
 
-    object SignUpEvent : LoginUiEvent
+    data class SignUpEvent (val destinationID: Int) : LoginUiEvent
 }

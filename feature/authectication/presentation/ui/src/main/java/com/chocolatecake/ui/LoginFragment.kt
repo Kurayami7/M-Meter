@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.chocolatecake.bases.BaseFragment
@@ -31,6 +32,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         auth = Firebase.auth
         handleKeyboardAppearanceEvent()
     }
@@ -65,7 +67,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
     override fun onEvent(event: LoginUiEvent) {
         when (event) {
             is LoginUiEvent.NavigateToHomeScreen -> {
-                Log.d("LoginFragment", "Navigating to home screen")
+                Log.d("LoginFragment", "Navigating to home screen via Login")
                 val navController = findNavController()
                 navController.popBackStack(navController.graph.startDestinationId, false)
                 navController.navigate(event.id)
@@ -85,8 +87,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginUiState, LoginUiEv
             }
 
             is LoginUiEvent.SignUpEvent -> {
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_SIGNUP_URL))
-                startActivity(browserIntent)
+                Log.d("LoginFragment", "Navigating to register screen via Signup")
+                val navController = findNavController()
+                navController.popBackStack(navController.graph.startDestinationId, false)
+                navController.navigate(event.destinationID)
             }
 
             is LoginUiEvent.ShowSnackBar -> {

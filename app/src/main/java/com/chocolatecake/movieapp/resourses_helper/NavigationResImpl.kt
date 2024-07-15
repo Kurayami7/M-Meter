@@ -9,4 +9,5 @@ class NavigationResImpl @Inject constructor() : NavigationRes {
     override val homeFeatureLink = com.chocolatecake.ui.home.R.id.homeFragment
     override val gameFeatureLink = com.chocolatecake.ui.trivia.R.id.game_nav_graph
     override val authFeatureLink = com.chocolatecake.ui.home.R.id.loginFragment
+    override val signupFeatureLink = com.chocolatecake.ui.home.R.id.registerFragment
 }

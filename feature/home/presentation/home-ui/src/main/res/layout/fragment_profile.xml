@@ -66,7 +66,7 @@
                 android:layout_marginBottom="@dimen/spacing_extra_extra_giant_56dp"
                 android:backgroundTint="#FF38FFEC"
                 android:onClick="@{()->viewModel.ocClickLogIn()}"
-                android:text="@string/login"
+                android:text="@string/login_signup"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="21sp"

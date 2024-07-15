@@ -4,13 +4,21 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.chocolatecake.bases.BaseViewModel
+import com.chocolatecake.bases.NavigationRes
 import com.chocolatecake.viewmodel.LoginUiEvent
+import com.chocolatecake.viewmodel.log
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 import kotlinx.coroutines.tasks.await
 
 class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiEvent>(RegistrationUIState()) {
@@ -25,15 +33,22 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
     val email = MutableStateFlow("")
     val password = MutableStateFlow("")
     val confirmPassword = MutableStateFlow("")
+    // Private mutable flow to emit UI events
+    private val _uiEvent = MutableSharedFlow<RegistrationUiEvent>()
 
     init {
+        viewModelScope.launch { state.collectLatest { it.log() } }
         auth = Firebase.auth
     }
+
+
+    // Publicly exposed SharedFlow for the Fragment to observe
+    val uiEvent: SharedFlow<RegistrationUiEvent> = _uiEvent.asSharedFlow()
 
     fun onClickRegister() {
         Log.d("RegistrationViewModel", "onClickRegister called") // Log entry point
         viewModelScope.launch {
-            // 1. Validating input (check for empty fields, password match, etc.)
+            // 1. Validating input (checking for empty fields, password match, etc.)
             if (!isValidInput()) {
                 Log.w("RegistrationViewModel", "Invalid input")
                 _state.value = RegistrationUIState(error = "Invalid input")
@@ -52,6 +67,7 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
 
                 // Update the state to indicate successful registration
                 _state.value = RegistrationUIState(registrationSuccess = true)
+                sendEvent(RegistrationUiEvent.ShowSnackBar("Your registration was successful. Logging in..."))
 
             } catch (e: Exception) {
                 // Handle registration errors (e.g., email already in use, weak password)
@@ -62,13 +78,10 @@ class RegistrationViewModel : BaseViewModel<RegistrationUIState, RegistrationUiE
     }
 
     private fun isValidInput(): Boolean {
-        // Add more validation rules here (email format, password strength, etc.)
+        // Need to add more validation rules here (email format, password strength, etc.)
         return email.value.isNotBlank() &&
                 password.value.isNotBlank() &&
                 password.value == confirmPassword.value
     }
 
-    private suspend fun performRegistration(email: String, password: String): Boolean {
-        return true // Simulating successful registration for now
-    }
 }
