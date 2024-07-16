@@ -20,5 +20,6 @@
     <color name="gradient2">#801F1F1F</color>
     <color name="gradient3">#00FFFFFF</color>
     <color name="gradient4">#000000</color>
+    <color name="black">#000000</color>
 
 </resources>

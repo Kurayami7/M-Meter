@@ -68,12 +68,10 @@
       android:pathData="M125.45,112.22C121.28,120.41 112.76,125.97 102.74,125.97C92.71,125.97 83.81,120.41 79.08,112.22C85.57,107.8 93.45,105.22 102.03,105.22C110.61,105.22 118.66,107.8 125.45,112.22Z"
       android:strokeAlpha="0.6"
       android:fillColor="#38FFEC"
-      android:fillColor="#38FFEC"
       android:fillAlpha="0.6"/>
   <path
       android:pathData="M113.28,90.73C113.5,97.19 108.42,102.42 101.93,102.42C95.44,102.42 90.01,97.19 89.78,90.73C89.56,84.27 94.64,79.03 101.13,79.03C107.62,79.03 113.06,84.27 113.28,90.73Z"
       android:strokeAlpha="0.6"
-      android:fillColor="#38FFEC"
       android:fillColor="#38FFEC"
       android:fillAlpha="0.6"/>
   <path
