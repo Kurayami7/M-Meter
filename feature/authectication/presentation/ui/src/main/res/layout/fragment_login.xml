@@ -20,7 +20,7 @@
         app:layoutDescription="@xml/fragment_login_xml_constraintlayout_scene">
 
         <ImageView
-            android:id="@+id/imageview_login"
+            android:id="@+id/imageview_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="-60dp"
@@ -28,8 +28,10 @@
             android:src="@drawable/login_pic"
             app:layout_constraintBottom_toTopOf="@+id/view_background"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.091" />
 
         <View
             android:id="@+id/view_background"
