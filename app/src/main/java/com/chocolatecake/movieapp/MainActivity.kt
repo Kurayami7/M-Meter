@@ -22,11 +22,18 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var soundManager:SoundManager
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
         super.onCreate(savedInstanceState)
+        installSplashScreen().apply {
+            // Ensure splash screen is removed after animation
+            setOnExitAnimationListener { splashScreenView ->
+                splashScreenView.remove()
+            }
+        }
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         changeAppTheme()
     }
 
