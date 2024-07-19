@@ -114,13 +114,7 @@
 
     <style name="TextStyle.BodyMedium.TextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:maxLines">1</item>
-<<<<<<< Updated upstream
-        <item name="android:textColor">@color/on_background_60</item>
-        <item name="android:textColorHint">@color/on_background_60</item>
-        <item name="android:background">@drawable/edittext_background</item>
-        <item name="android:drawableTint">@color/on_background_60</item>
-        <item name="boxBackgroundColor">@drawable/edittext_background</item>
-=======
+
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
         <item name="android:background">@drawable/button_retry</item>
@@ -130,7 +124,7 @@
         <item name="hintTextColor">@color/black</item>
         <item name="helperTextTextColor">@color/black</item>
         <item name="boxStrokeColor">@color/black</item>
->>>>>>> Stashed changes
+
     </style>
 
     <!-- Search Box Style -->
