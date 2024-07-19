@@ -42,7 +42,7 @@ class StringsResImpl @Inject constructor(
     override val medium: String = getString(R.string.medium)
 
     override val hard: String = getString(R.string.hard)
-    override val watchlist: String = getString(com.chocolatecake.ui.home.R.string.watchlist)
+    override val watchlist: String = getString(com.chocolatecake.ui.home.R.string.playlist)
     override val favourite: String = getString(com.chocolatecake.ui.home.R.string.favorite)
 
     override val popularMovies: String = getString(R.string.popular)
