@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="true"
                     android:paddingVertical="8dp"
-                    android:text="@string/watchlist"
+                    android:text="@string/playlist"
                     android:textAppearance="@style/TextStyle.BodySmall" />
             </com.google.android.material.chip.ChipGroup>
             <!--endregion-->

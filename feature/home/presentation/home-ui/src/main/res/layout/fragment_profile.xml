@@ -52,6 +52,7 @@
                 android:text="@string/login_title"
                 android:textAlignment="center"
                 android:textColor="@color/on_background_87"
+                android:paddingBottom="39dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_view_login" />
@@ -64,14 +65,15 @@
                 android:layout_marginStart="@dimen/spacing_medium_16dp"
                 android:layout_marginEnd="@dimen/spacing_medium_16dp"
                 android:layout_marginBottom="@dimen/spacing_extra_extra_giant_56dp"
-                android:backgroundTint="#FF38FFEC"
+                android:backgroundTint="#199C90"
                 android:onClick="@{()->viewModel.ocClickLogIn()}"
                 android:text="@string/login_signup"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="21sp"
                 android:textAppearance="@font/montserrat_semibold"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_login_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -136,7 +138,7 @@
                 android:gravity="center_vertical"
                 android:onClick="@{()->viewModel.onClickWatchlist()}"
                 android:padding="@dimen/spacing_small_8dp"
-                android:text="@string/watchlist"
+                android:text="@string/playlist"
                 android:textColor="@color/on_background_60"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,49 +157,12 @@
                 android:gravity="center_vertical"
                 android:onClick="@{()->viewModel.onClickWatchHistory()}"
                 android:padding="@dimen/spacing_small_8dp"
-                android:text="@string/watch_history"
+                android:text="@string/song_history"
                 android:textColor="@color/on_background_60"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_view_watchlist" />
 
-            <TextView
-                android:id="@+id/text_view_mylists"
-                style="@style/TextStyle.TitleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_field"
-                android:layout_marginTop="@dimen/spacing_small_8dp"
-                android:background="@drawable/custom_card_background"
-                android:drawableStart="@drawable/ic_checklist"
-                android:drawablePadding="@dimen/spacing_small_8dp"
-                android:drawableTint="@color/on_background_60"
-                android:gravity="center_vertical"
-                android:onClick="@{()->viewModel.onClickMyLists()}"
-                android:padding="@dimen/spacing_small_8dp"
-                android:text="@string/my_lists"
-                android:textColor="@color/on_background_60"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_watch_history" />
-
-            <TextView
-                android:id="@+id/text_view_popcorn_puzzles"
-                style="@style/TextStyle.TitleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_field"
-                android:layout_marginTop="@dimen/spacing_small_8dp"
-                android:background="@drawable/custom_card_background"
-                android:drawableStart="@drawable/ic_gamepad"
-                android:drawablePadding="@dimen/spacing_small_8dp"
-                android:drawableTint="@color/on_background_60"
-                android:gravity="center_vertical"
-                android:onClick="@{()-> viewModel.onClickPopcornPuzzles()}"
-                android:padding="@dimen/spacing_small_8dp"
-                android:text="@string/popcorn_puzzles"
-                android:textColor="@color/on_background_60"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_mylists" />
 
             <TextView
                 android:id="@+id/text_view_theme"
@@ -213,10 +178,9 @@
                 android:padding="@dimen/spacing_small_8dp"
                 android:text="@string/theme"
                 android:textColor="@color/on_background_60"
-                android:textSize="@dimen/text_small"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_popcorn_puzzles" />
+                app:layout_constraintTop_toBottomOf="@id/text_view_watch_history" />
 
             <com.google.android.material.materialswitch.MaterialSwitch
                 android:id="@+id/switch_botton_theme"
@@ -297,9 +261,7 @@
                 android:layout_height="wrap_content"
                 app:constraint_referenced_ids="image_view_profile,
             text_view_profile_username,text_view_favorite,
-            text_view_watch_history,
-            text_view_watchlist,text_view_mylists,
-            text_view_popcorn_puzzles,
+            text_view_watch_history, text_view_watchlist,
             text_view_theme,switch_botton_theme,text_view_logout"
                 app:isVisible="@{(!viewModel.state.loading) &amp;&amp; viewModel.state.loggedIn}" />
 
