@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.common.model.SeasonHorizontalUIState" />
+            type="com.coderops.viewmodel.common.model.SeasonHorizontalUIState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.tv_details.listener.SeasonListener" />
+            type="com.coderops.viewmodel.tv_details.listener.SeasonListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

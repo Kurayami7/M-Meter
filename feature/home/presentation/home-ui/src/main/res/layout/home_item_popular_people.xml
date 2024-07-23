@@ -9,11 +9,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.home.PopularPeopleUiState" />
+            type="com.coderops.viewmodel.home.PopularPeopleUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.home.HomeListener" />
+            type="com.coderops.viewmodel.home.HomeListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

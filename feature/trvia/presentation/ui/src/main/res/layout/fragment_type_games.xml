@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.game_type.GameTypeViewModel" />
+            type="com.coderops.viewmodel.game_type.GameTypeViewModel" />
     </data>
     <ScrollView
         android:layout_width="match_parent"

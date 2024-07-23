@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.myList.MyListViewModel" />
+            type="com.coderops.viewmodel.myList.MyListViewModel" />
     </data>
 
         <LinearLayout

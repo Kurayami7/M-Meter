@@ -6,11 +6,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.movie_details.adapter.MovieDetailsItem.Upper" />
+            type="com.coderops.ui.movie_details.adapter.MovieDetailsItem.Upper" />
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.movieDetails.MovieDetailsViewModel" />
+            type="com.coderops.viewmodel.movieDetails.MovieDetailsViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

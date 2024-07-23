@@ -5,14 +5,14 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.my_rated.MyRatedViewModel"/>
+            type="com.coderops.viewmodel.my_rated.MyRatedViewModel"/>
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutDescription="@xml/fragment_my_rated_scene"
-        tools:context="com.chocolatecake.ui.my_rated.MyRatedFragment">
+        tools:context="com.coderops.ui.my_rated.MyRatedFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"

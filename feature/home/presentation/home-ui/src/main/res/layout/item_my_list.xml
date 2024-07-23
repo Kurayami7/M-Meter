@@ -7,16 +7,16 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.myList.ListMovieUiState" />
+            type="com.coderops.viewmodel.myList.ListMovieUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.myList.MyListListener" />
+            type="com.coderops.viewmodel.myList.MyListListener" />
 
 
             <variable
                 name="viewModel"
-                type="com.chocolatecake.viewmodel.myList.MyListViewModel" />
+                type="com.coderops.viewmodel.myList.MyListViewModel" />
     </data>
 
 

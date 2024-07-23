@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.home.HomeItem.PopularPeople" />
+            type="com.coderops.ui.home.HomeItem.PopularPeople" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

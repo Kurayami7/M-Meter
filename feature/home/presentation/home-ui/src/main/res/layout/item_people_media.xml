@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.people.PersonDetailsUiState.PeopleMediaUiState" />
+            type="com.coderops.viewmodel.people.PersonDetailsUiState.PeopleMediaUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.people.PeopleDetailsListener" />
+            type="com.coderops.viewmodel.people.PeopleDetailsListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1460,30 +1460,30 @@
 |       |   |   |   |-- data_binding_artifact
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   `-- kaptDebugKotlin
-|       |   |   |   |   |       |-- com.chocolatecake.ui.auth-br.bin
-|       |   |   |   |   |       `-- com.chocolatecake.ui.auth-setter_store.json
+|       |   |   |   |   |       |-- coderops.ui.auth-br.bin
+|       |   |   |   |   |       `-- coderops.ui.auth-setter_store.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       `-- kaptDebugAndroidTestKotlin
 |       |   |   |   |-- data_binding_base_class_log_artifact
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   `-- out
-|       |   |   |   |   |       `-- com.chocolatecake.ui.auth-binding_classes.json
+|       |   |   |   |   |       `-- coderops.ui.auth-binding_classes.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       `-- out
-|       |   |   |   |           `-- com.chocolatecake.ui.auth.test-binding_classes.json
+|       |   |   |   |           `-- coderops.ui.auth.test-binding_classes.json
 |       |   |   |   |-- data_binding_dependency_artifacts
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-br.bin
 |       |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-setter_store.json
-|       |   |   |   |   |   |-- com.chocolatecake.bases-br.bin
-|       |   |   |   |   |   `-- com.chocolatecake.bases-setter_store.json
+|       |   |   |   |   |   |-- coderops.bases-br.bin
+|       |   |   |   |   |   `-- coderops.bases-setter_store.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       |-- androidx.databinding.library.baseAdapters-br.bin
 |       |   |   |   |       |-- androidx.databinding.library.baseAdapters-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.bases-br.bin
-|       |   |   |   |       |-- com.chocolatecake.bases-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.ui.auth-br.bin
-|       |   |   |   |       `-- com.chocolatecake.ui.auth-setter_store.json
+|       |   |   |   |       |-- coderops.bases-br.bin
+|       |   |   |   |       |-- coderops.bases-setter_store.json
+|       |   |   |   |       |-- coderops.ui.auth-br.bin
+|       |   |   |   |       `-- coderops.ui.auth-setter_store.json
 |       |   |   |   |-- data_binding_export_class_list
 |       |   |   |   |   `-- debug
 |       |   |   |   |       `-- kaptDebugKotlin
@@ -7237,38 +7237,38 @@
 |       |   |   |   |-- data_binding_artifact
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   `-- kaptDebugKotlin
-|       |   |   |   |   |       |-- com.chocolatecake.ui.home-br.bin
-|       |   |   |   |   |       `-- com.chocolatecake.ui.home-setter_store.json
+|       |   |   |   |   |       |-- coderops.ui.home-br.bin
+|       |   |   |   |   |       `-- coderops.ui.home-setter_store.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       `-- kaptDebugAndroidTestKotlin
 |       |   |   |   |-- data_binding_base_class_log_artifact
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   `-- out
-|       |   |   |   |   |       `-- com.chocolatecake.ui.home-binding_classes.json
+|       |   |   |   |   |       `-- coderops.ui.home-binding_classes.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       `-- out
-|       |   |   |   |           `-- com.chocolatecake.ui.home.test-binding_classes.json
+|       |   |   |   |           `-- coderops.ui.home.test-binding_classes.json
 |       |   |   |   |-- data_binding_dependency_artifacts
 |       |   |   |   |   |-- debug
 |       |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-br.bin
 |       |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-setter_store.json
-|       |   |   |   |   |   |-- com.chocolatecake.bases-br.bin
-|       |   |   |   |   |   |-- com.chocolatecake.bases-setter_store.json
-|       |   |   |   |   |   |-- com.chocolatecake.ui.auth-br.bin
-|       |   |   |   |   |   |-- com.chocolatecake.ui.auth-setter_store.json
-|       |   |   |   |   |   |-- com.chocolatecake.ui.trivia-br.bin
-|       |   |   |   |   |   `-- com.chocolatecake.ui.trivia-setter_store.json
+|       |   |   |   |   |   |-- coderops.bases-br.bin
+|       |   |   |   |   |   |-- coderops.bases-setter_store.json
+|       |   |   |   |   |   |-- coderops.ui.auth-br.bin
+|       |   |   |   |   |   |-- coderops.ui.auth-setter_store.json
+|       |   |   |   |   |   |-- coderops.ui.trivia-br.bin
+|       |   |   |   |   |   `-- coderops.ui.trivia-setter_store.json
 |       |   |   |   |   `-- debugAndroidTest
 |       |   |   |   |       |-- androidx.databinding.library.baseAdapters-br.bin
 |       |   |   |   |       |-- androidx.databinding.library.baseAdapters-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.bases-br.bin
-|       |   |   |   |       |-- com.chocolatecake.bases-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.ui.auth-br.bin
-|       |   |   |   |       |-- com.chocolatecake.ui.auth-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.ui.home-br.bin
-|       |   |   |   |       |-- com.chocolatecake.ui.home-setter_store.json
-|       |   |   |   |       |-- com.chocolatecake.ui.trivia-br.bin
-|       |   |   |   |       `-- com.chocolatecake.ui.trivia-setter_store.json
+|       |   |   |   |       |-- coderops.bases-br.bin
+|       |   |   |   |       |-- coderops.bases-setter_store.json
+|       |   |   |   |       |-- coderops.ui.auth-br.bin
+|       |   |   |   |       |-- coderops.ui.auth-setter_store.json
+|       |   |   |   |       |-- coderops.ui.home-br.bin
+|       |   |   |   |       |-- coderops.ui.home-setter_store.json
+|       |   |   |   |       |-- coderops.ui.trivia-br.bin
+|       |   |   |   |       `-- coderops.ui.trivia-setter_store.json
 |       |   |   |   |-- data_binding_export_class_list
 |       |   |   |   |   `-- debug
 |       |   |   |   |       `-- kaptDebugKotlin
@@ -18984,30 +18984,30 @@
         |   |   |   |-- data_binding_artifact
         |   |   |   |   |-- debug
         |   |   |   |   |   `-- kaptDebugKotlin
-        |   |   |   |   |       |-- com.chocolatecake.ui.trivia-br.bin
-        |   |   |   |   |       `-- com.chocolatecake.ui.trivia-setter_store.json
+        |   |   |   |   |       |-- coderops.ui.trivia-br.bin
+        |   |   |   |   |       `-- coderops.ui.trivia-setter_store.json
         |   |   |   |   `-- debugAndroidTest
         |   |   |   |       `-- kaptDebugAndroidTestKotlin
         |   |   |   |-- data_binding_base_class_log_artifact
         |   |   |   |   |-- debug
         |   |   |   |   |   `-- out
-        |   |   |   |   |       `-- com.chocolatecake.ui.trivia-binding_classes.json
+        |   |   |   |   |       `-- coderops.ui.trivia-binding_classes.json
         |   |   |   |   `-- debugAndroidTest
         |   |   |   |       `-- out
-        |   |   |   |           `-- com.chocolatecake.ui.trivia.test-binding_classes.json
+        |   |   |   |           `-- coderops.ui.trivia.test-binding_classes.json
         |   |   |   |-- data_binding_dependency_artifacts
         |   |   |   |   |-- debug
         |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-br.bin
         |   |   |   |   |   |-- androidx.databinding.library.baseAdapters-setter_store.json
-        |   |   |   |   |   |-- com.chocolatecake.bases-br.bin
-        |   |   |   |   |   `-- com.chocolatecake.bases-setter_store.json
+        |   |   |   |   |   |-- coderops.bases-br.bin
+        |   |   |   |   |   `-- coderops.bases-setter_store.json
         |   |   |   |   `-- debugAndroidTest
         |   |   |   |       |-- androidx.databinding.library.baseAdapters-br.bin
         |   |   |   |       |-- androidx.databinding.library.baseAdapters-setter_store.json
-        |   |   |   |       |-- com.chocolatecake.bases-br.bin
-        |   |   |   |       |-- com.chocolatecake.bases-setter_store.json
-        |   |   |   |       |-- com.chocolatecake.ui.trivia-br.bin
-        |   |   |   |       `-- com.chocolatecake.ui.trivia-setter_store.json
+        |   |   |   |       |-- coderops.bases-br.bin
+        |   |   |   |       |-- coderops.bases-setter_store.json
+        |   |   |   |       |-- coderops.ui.trivia-br.bin
+        |   |   |   |       `-- coderops.ui.trivia-setter_store.json
         |   |   |   |-- data_binding_export_class_list
         |   |   |   |   `-- debug
         |   |   |   |       `-- kaptDebugKotlin

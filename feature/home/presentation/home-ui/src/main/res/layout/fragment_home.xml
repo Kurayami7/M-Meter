@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.home.HomeViewModel" />
+            type="com.coderops.viewmodel.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

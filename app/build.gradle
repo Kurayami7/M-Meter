@@ -11,10 +11,10 @@ def localProperties = new Properties()
 localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
 android {
-    namespace 'com.chocolatecake.movieapp'
+    namespace 'com.coderops.movieapp'
     compileSdk rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "com.chocolatecake.movieapp"
+        applicationId "com.coderops.movieapp"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
         versionCode 1

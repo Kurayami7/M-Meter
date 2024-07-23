@@ -6,11 +6,11 @@
     <data>
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.watch_history.state_managment.MovieUiState" />
+            type="com.coderops.viewmodel.watch_history.state_managment.MovieUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.common.listener.MediaListener" />
+            type="com.coderops.viewmodel.common.listener.MediaListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

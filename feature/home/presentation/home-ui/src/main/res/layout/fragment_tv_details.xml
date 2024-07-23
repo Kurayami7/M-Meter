@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.tv_details.TvDetailsViewModel" />
+            type="com.coderops.viewmodel.tv_details.TvDetailsViewModel" />
     </data>
 
 

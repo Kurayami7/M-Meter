@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.people_guessing.PeopleGuessingViewModel" />
+            type="com.coderops.viewmodel.people_guessing.PeopleGuessingViewModel" />
     </data>
 
     <ScrollView

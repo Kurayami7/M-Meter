@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.chocolatecake.viewmodel'
+    namespace 'com.coderops.viewmodel'
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {

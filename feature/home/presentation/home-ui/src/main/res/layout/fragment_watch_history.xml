@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.watch_history.WatchHistoryViewModel" />
+            type="com.coderops.viewmodel.watch_history.WatchHistoryViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

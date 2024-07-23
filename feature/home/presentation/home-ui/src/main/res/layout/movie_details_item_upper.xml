@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.movie_details.adapter.MovieDetailsItem.Upper" />
+            type="com.coderops.ui.movie_details.adapter.MovieDetailsItem.Upper" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.movieDetails.MovieDetailsListener" />
+            type="com.coderops.viewmodel.movieDetails.MovieDetailsListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

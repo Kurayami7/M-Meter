@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeGameFragment"
-        android:name="com.chocolatecake.ui.home.HomeGameFragment"
+        android:name="com.coderops.ui.home.HomeGameFragment"
         android:label="HomeGameFragment"
         tools:layout="@layout/fragment_game_home">
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/memorizeGameFragment"
-        android:name="com.chocolatecake.ui.memorize_game.MemorizeGameFragment"
+        android:name="com.coderops.ui.memorize_game.MemorizeGameFragment"
         android:label="MemorizeGameFragment"
         tools:layout="@layout/fragment_memorize">
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieGuessingFragment"
-        android:name="com.chocolatecake.ui.movie_guessing.MovieGuessingFragment"
+        android:name="com.coderops.ui.movie_guessing.MovieGuessingFragment"
         android:label="MovieGuessingFragment"
         tools:layout="@layout/fragment_moive_guessing">
         <action
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/peopleGuessingFragment"
-        android:name="com.chocolatecake.ui.people_guessing.PeopleGuessingFragment"
+        android:name="com.coderops.ui.people_guessing.PeopleGuessingFragment"
         android:label="PeopleGuessingFragment"
         tools:layout="@layout/fragment_people_guessing">
         <action
@@ -105,7 +105,7 @@
     </fragment>
     <fragment
         android:id="@+id/tvShowGuessingFragment"
-        android:name="com.chocolatecake.ui.tv_show_guessing.TvShowGuessingFragment"
+        android:name="com.coderops.ui.tv_show_guessing.TvShowGuessingFragment"
         android:label="TvShowGuessingFragment"
         tools:layout="@layout/fragment_tv_show_guessing" >
         <action
@@ -129,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/typeGameFragment"
-        android:name="com.chocolatecake.ui.type_game.TypeGameFragment"
+        android:name="com.coderops.ui.type_game.TypeGameFragment"
         android:label="TypeGameFragment"
         tools:layout="@layout/fragment_type_games">
 
@@ -143,12 +143,12 @@
     </fragment>
     <fragment
         android:id="@+id/congratsFragment"
-        android:name="com.chocolatecake.ui.congrats.CongratsFragment"
+        android:name="com.coderops.ui.congrats.CongratsFragment"
         android:label="CongratsFragment"
         tools:layout="@layout/fragment_congrats">
         <argument
             android:name="gameType"
-            app:argType="com.chocolatecake.viewmodel.common.model.GameType" />
+            app:argType="com.coderops.viewmodel.common.model.GameType" />
         <action
             android:id="@+id/action_congratsFragment_to_typeGameFragment"
             app:destination="@id/typeGameFragment"
@@ -197,7 +197,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameLevelFragment"
-        android:name="com.chocolatecake.ui.game_level.GameLevelFragment"
+        android:name="com.coderops.ui.game_level.GameLevelFragment"
         android:label="GameLevelFragment"
         tools:layout="@layout/fragment_level_game">
         <action
@@ -230,6 +230,6 @@
             app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="game_level_type"
-            app:argType="com.chocolatecake.viewmodel.common.model.GameType" />
+            app:argType="com.coderops.viewmodel.common.model.GameType" />
     </fragment>
 </navigation>

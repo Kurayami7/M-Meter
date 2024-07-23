@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.youtube_trailer.TrailerViewModel" />
+            type="com.coderops.viewmodel.youtube_trailer.TrailerViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.movieDetails.MovieDetailsViewModel" />
+            type="com.coderops.viewmodel.movieDetails.MovieDetailsViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

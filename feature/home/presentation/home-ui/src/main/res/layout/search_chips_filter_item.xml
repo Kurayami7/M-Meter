@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.search.SearchUiState.GenresUiState" />
+            type="com.coderops.viewmodel.search.SearchUiState.GenresUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.search.SearchListener" />
+            type="com.coderops.viewmodel.search.SearchListener" />
     </data>
 
     <com.google.android.material.chip.Chip

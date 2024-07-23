@@ -7,11 +7,11 @@
 
         <variable
             name="items"
-            type="com.chocolatecake.ui.tv_details.TvDetailsItem.Recommended" />
+            type="com.coderops.ui.tv_details.TvDetailsItem.Recommended" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.tv_details.listener.ShowMoreRecommended" />
+            type="com.coderops.viewmodel.tv_details.listener.ShowMoreRecommended" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

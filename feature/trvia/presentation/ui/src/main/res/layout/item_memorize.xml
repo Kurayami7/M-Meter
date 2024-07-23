@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.memorize_game.ItemGameImageUiState" />
+            type="com.coderops.viewmodel.memorize_game.ItemGameImageUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.memorize_game.MemorizeListener" />
+            type="com.coderops.viewmodel.memorize_game.MemorizeListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.common.model.CommentUIState" />
+            type="com.coderops.viewmodel.common.model.CommentUIState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

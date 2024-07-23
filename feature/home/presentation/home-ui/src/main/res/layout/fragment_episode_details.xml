@@ -8,11 +8,11 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.episode_details.EpisodeDetailsViewModel" />
+            type="com.coderops.viewmodel.episode_details.EpisodeDetailsViewModel" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.episode_details.EpisodeDetailsListener" />
+            type="com.coderops.viewmodel.episode_details.EpisodeDetailsListener" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

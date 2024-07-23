@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.episode_details.EpisodeDetailsViewModel" />
+            type="com.coderops.viewmodel.episode_details.EpisodeDetailsViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
