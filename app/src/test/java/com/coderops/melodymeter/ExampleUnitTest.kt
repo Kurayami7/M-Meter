@@ -1,4 +1,4 @@
-package com.coderops.movieapp
+package com.coderops.melodymeter
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

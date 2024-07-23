@@ -1,4 +1,4 @@
-package com.coderops.movieapp.di
+package com.coderops.melodymeter.di
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

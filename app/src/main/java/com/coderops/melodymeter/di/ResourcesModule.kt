@@ -1,9 +1,9 @@
-package com.coderops.movieapp.di
+package com.coderops.melodymeter.di
 
 import com.coderops.bases.NavigationRes
 import com.coderops.bases.StringsRes
-import com.coderops.movieapp.resourses_helper.NavigationResImpl
-import com.coderops.movieapp.resourses_helper.StringsResImpl
+import com.coderops.melodymeter.resourses_helper.NavigationResImpl
+import com.coderops.melodymeter.resourses_helper.StringsResImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

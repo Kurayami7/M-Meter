@@ -1,4 +1,4 @@
-package com.coderops.movieapp.di
+package com.coderops.melodymeter.di
 
 import dagger.Module
 import dagger.Provides

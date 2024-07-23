@@ -1,6 +1,5 @@
-package com.coderops.movieapp
+package com.coderops.melodymeter
 
-import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -10,7 +9,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.coderops.movieapp.databinding.ActivityMainBinding
+import com.coderops.melodymeter.databinding.ActivityMainBinding
 import com.coderops.ui.sound_when_play.SoundManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint

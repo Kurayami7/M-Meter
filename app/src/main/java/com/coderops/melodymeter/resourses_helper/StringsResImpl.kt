@@ -1,4 +1,4 @@
-package com.coderops.movieapp.resourses_helper
+package com.coderops.melodymeter.resourses_helper
 
 import android.content.Context
 import androidx.annotation.StringRes
