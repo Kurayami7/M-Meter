@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.season_details.SeasonDetailsItem.OverviewItem" />
+            type="com.coderops.ui.season_details.SeasonDetailsItem.OverviewItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

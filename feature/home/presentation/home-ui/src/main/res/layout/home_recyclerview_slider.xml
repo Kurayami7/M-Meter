@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.home.HomeItem" />
+            type="com.coderops.ui.home.HomeItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

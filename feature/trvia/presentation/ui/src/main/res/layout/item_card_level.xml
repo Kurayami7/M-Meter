@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.common.model.ItemGameLevelUIState" />
+            type="com.coderops.viewmodel.common.model.ItemGameLevelUIState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.game_level.ItemGameLevelListener" />
+            type="com.coderops.viewmodel.game_level.ItemGameLevelListener" />
 
 
     </data>

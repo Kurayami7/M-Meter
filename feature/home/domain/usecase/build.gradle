@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.chocolatecake.usecase'
+    namespace 'com.coderops.usecase'
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {

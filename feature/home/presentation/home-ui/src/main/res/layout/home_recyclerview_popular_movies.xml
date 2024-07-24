@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.home.HomeItem.PopularMovies" />
+            type="com.coderops.ui.home.HomeItem.PopularMovies" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.home.HomeListener" />
+            type="com.coderops.viewmodel.home.HomeListener" />
 
     </data>
 

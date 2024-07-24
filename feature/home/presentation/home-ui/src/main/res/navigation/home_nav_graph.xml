@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.chocolatecake.ui.home.HomeFragment"
+        android:name="com.coderops.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.chocolatecake.ui.search.SearchFragment"
+        android:name="com.coderops.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
         <argument
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/tvFragment"
-        android:name="com.chocolatecake.ui.tv_shows.TvFragment"
+        android:name="com.coderops.ui.tv_shows.TvFragment"
         android:label="TvFragment"
         tools:layout="@layout/fragment_tv">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.chocolatecake.ui.profile.ProfileFragment"
+        android:name="com.coderops.ui.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <action
@@ -82,7 +82,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.chocolatecake.ui.register.RegisterFragment"
+        android:name="com.coderops.ui.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
 
@@ -98,7 +98,7 @@
 
     <fragment
         android:id="@+id/watchHistoryFragment"
-        android:name="com.chocolatecake.ui.watch_history.WatchHistoryFragment"
+        android:name="com.coderops.ui.watch_history.WatchHistoryFragment"
         android:label="WatchHistoryFragment"
         tools:layout="@layout/fragment_watch_history">
         <action
@@ -107,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.chocolatecake.ui.movie_details.MovieDetailsFragment"
+        android:name="com.coderops.ui.movie_details.MovieDetailsFragment"
         android:label="MovieDetailsFragment"
         tools:layout="@layout/fragment_movie_details">
         <argument
@@ -134,14 +134,14 @@
 
     <fragment
         android:id="@+id/showMoreFragment"
-        android:name="com.chocolatecake.ui.showMore.ShowMoreFragment"
+        android:name="com.coderops.ui.showMore.ShowMoreFragment"
         android:label="ShowMoreFragment"
         tools:layout="@layout/fragment_show_more">
 
 
         <argument
             android:name="showMoreType"
-            app:argType="com.chocolatecake.viewmodel.showmore.ShowMoreType" />
+            app:argType="com.coderops.viewmodel.showmore.ShowMoreType" />
         <action
             android:id="@+id/action_showMoreFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/seasonDetailsFragment"
-        android:name="com.chocolatecake.ui.season_details.SeasonDetailsFragment"
+        android:name="com.coderops.ui.season_details.SeasonDetailsFragment"
         android:label="SeasonDetailsFragment"
         tools:layout="@layout/fragment_season_details">
         <argument
@@ -166,7 +166,7 @@
     </fragment>
     <fragment
         android:id="@+id/tvDetailsFragment"
-        android:name="com.chocolatecake.ui.tv_details.TvDetailsFragment"
+        android:name="com.coderops.ui.tv_details.TvDetailsFragment"
         android:label="TvDetailsFragment"
         tools:layout="@layout/fragment_tv_details">
         <action
@@ -193,7 +193,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.chocolatecake.ui.LoginFragment"
+        android:name="com.coderops.ui.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -208,7 +208,7 @@
     </fragment>
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.chocolatecake.ui.my_list.MyListFragment"
+        android:name="com.coderops.ui.my_list.MyListFragment"
         android:label="MyListFragment"
         tools:layout="@layout/fragment_my_list">
         <action
@@ -217,7 +217,7 @@
     </fragment>
     <fragment
         android:id="@+id/myListDetailsFragment"
-        android:name="com.chocolatecake.ui.my_list_details.MyListDetailsFragment"
+        android:name="com.coderops.ui.my_list_details.MyListDetailsFragment"
         android:label="MyListDetailsFragment"
         tools:layout="@layout/fragment_my_list_details">
         <argument
@@ -236,7 +236,7 @@
     </fragment>
     <fragment
         android:id="@+id/episodeDetailsFragment"
-        android:name="com.chocolatecake.ui.episode_details.EpisodeDetailsFragment"
+        android:name="com.coderops.ui.episode_details.EpisodeDetailsFragment"
         android:label="EpisodeDetailsFragment"
         tools:layout="@layout/fragment_episode_details">
         <argument
@@ -257,7 +257,7 @@
     </fragment>
     <fragment
         android:id="@+id/trailerFragment"
-        android:name="com.chocolatecake.ui.youtube_player.TrailerFragment"
+        android:name="com.coderops.ui.youtube_player.TrailerFragment"
         android:label="TrailerFragment"
         tools:layout="@layout/fragment_trailer">
         <argument
@@ -267,7 +267,7 @@
 
     <fragment
         android:id="@+id/myRatedFragment"
-        android:name="com.chocolatecake.ui.my_rated.MyRatedFragment"
+        android:name="com.coderops.ui.my_rated.MyRatedFragment"
         android:label="MyRatedFragment">
         <action
             android:id="@+id/action_myRatedFragment_to_movieDetailsFragment"
@@ -278,7 +278,7 @@
     </fragment>
     <fragment
         android:id="@+id/peopleDetailsFragment"
-        android:name="com.chocolatecake.ui.people.PeopleDetailsFragment"
+        android:name="com.coderops.ui.people.PeopleDetailsFragment"
         android:label="PeopleDetailsFragment">
         <argument
             android:name="personId"

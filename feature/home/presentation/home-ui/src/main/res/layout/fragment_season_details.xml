@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.season_details.SeasonDetailsViewModel" />
+            type="com.coderops.viewmodel.season_details.SeasonDetailsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.movie_guessing.MovieGuessingViewModel" />
+            type="com.coderops.viewmodel.movie_guessing.MovieGuessingViewModel" />
     </data>
 
     <ScrollView

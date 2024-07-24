@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.home.UpComingMoviesUiState" />
+            type="com.coderops.viewmodel.home.UpComingMoviesUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.home.HomeListener" />
+            type="com.coderops.viewmodel.home.HomeListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

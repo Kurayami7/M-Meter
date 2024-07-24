@@ -7,11 +7,11 @@
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.profile.ProfileListener" />
+            type="com.coderops.viewmodel.profile.ProfileListener" />
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.profile.ProfileViewModel" />
+            type="com.coderops.viewmodel.profile.ProfileViewModel" />
 
     </data>
 

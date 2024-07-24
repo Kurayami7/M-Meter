@@ -6,11 +6,11 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.LoginViewModel" />
+            type="com.coderops.viewmodel.LoginViewModel" />
 
         <variable
             name="registrationViewModel"
-            type="com.chocolatecake.viewmodel.register.RegistrationViewModel" />
+            type="com.coderops.viewmodel.register.RegistrationViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout

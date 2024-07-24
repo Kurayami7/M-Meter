@@ -6,11 +6,11 @@
     <data>
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.home.NowPlayingUiState" />
+            type="com.coderops.viewmodel.home.NowPlayingUiState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.home.HomeListener" />
+            type="com.coderops.viewmodel.home.HomeListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

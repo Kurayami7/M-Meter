@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.chocolatecake.repository'
+    namespace 'com.coderops.repository'
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {

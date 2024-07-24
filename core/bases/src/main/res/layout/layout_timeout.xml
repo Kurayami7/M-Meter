@@ -5,6 +5,6 @@
     android:layout_width="@dimen/lottie_error_size"
     android:layout_height="@dimen/lottie_error_size"
     app:lottie_autoPlay="true"
-    app:lottie_colorFilter="#1CECDB"
+    app:lottie_colorFilter="@color/lottie_color"
     app:lottie_loop="true"
     app:lottie_rawRes="@raw/timeout" />

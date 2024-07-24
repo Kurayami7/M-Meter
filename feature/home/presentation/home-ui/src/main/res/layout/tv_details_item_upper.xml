@@ -7,15 +7,15 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.ui.tv_details.TvDetailsItem.Upper" />
+            type="com.coderops.ui.tv_details.TvDetailsItem.Upper" />
 
         <variable
             name="rateListener"
-            type="com.chocolatecake.viewmodel.tv_details.listener.RateListener" />
+            type="com.coderops.viewmodel.tv_details.listener.RateListener" />
 
         <variable
             name="playButtonListener"
-            type="com.chocolatecake.viewmodel.tv_details.listener.PlayButtonListener" />
+            type="com.coderops.viewmodel.tv_details.listener.PlayButtonListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.register.RegistrationViewModel" />
+            type="com.coderops.viewmodel.register.RegistrationViewModel" />
     </data>
 
     <ScrollView

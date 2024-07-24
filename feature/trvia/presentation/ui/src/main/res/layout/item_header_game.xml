@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.common.model.GameUiState" />
+            type="com.coderops.viewmodel.common.model.GameUiState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

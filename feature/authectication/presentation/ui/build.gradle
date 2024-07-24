@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'com.chocolatecake.ui.auth'
+    namespace 'com.coderops.ui.auth'
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
@@ -40,7 +40,7 @@ android {
         buildConfig true
     }
     packagingOptions {
-        exclude 'com/chocolatecake/ui/generated/callback/OnClickListener$Listener.class'
+        exclude 'com/coderops/ui/generated/callback/OnClickListener$Listener.class'
     }
 }
 

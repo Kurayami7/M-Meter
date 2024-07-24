@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.viewmodel.search.SearchViewModel" />
+            type="com.coderops.viewmodel.search.SearchViewModel" />
 
     </data>
 

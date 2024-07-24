@@ -4,15 +4,15 @@
     <data>
         <variable
             name="item"
-            type="com.chocolatecake.bases.demo.ItemState" />
+            type="com.coderops.bases.demo.ItemState" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.bases.demo.ItemListener" />
+            type="com.coderops.bases.demo.ItemListener" />
 
         <variable
             name="viewModel"
-            type="com.chocolatecake.bases.demo.ViewModelDemo" />
+            type="com.coderops.bases.demo.ViewModelDemo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

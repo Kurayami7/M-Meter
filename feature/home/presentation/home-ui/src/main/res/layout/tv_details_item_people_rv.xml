@@ -6,10 +6,10 @@
     <data>
         <variable
             name="item"
-            type="com.chocolatecake.ui.tv_details.TvDetailsItem.People" />
+            type="com.coderops.ui.tv_details.TvDetailsItem.People" />
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.tv_details.listener.ShowMoreCast" />
+            type="com.coderops.viewmodel.tv_details.listener.ShowMoreCast" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

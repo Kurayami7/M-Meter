@@ -6,11 +6,11 @@
 
         <variable
             name="item"
-            type="com.chocolatecake.viewmodel.common.model.UserListUi" />
+            type="com.coderops.viewmodel.common.model.UserListUi" />
 
         <variable
             name="listener"
-            type="com.chocolatecake.viewmodel.common.listener.ChipListener" />
+            type="com.coderops.viewmodel.common.listener.ChipListener" />
     </data>
 
     <com.google.android.material.chip.Chip
