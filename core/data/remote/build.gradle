@@ -18,7 +18,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "API_KEY", localProperties['API_KEY']
+//        buildConfigField "String", "API_KEY", localProperties['API_KEY']
+        buildConfigField("String", "SPOTIFY_CLIENT_ID", "\"${localProperties['SPOTIFY_CLIENT_ID']}\"")
+        buildConfigField("String", "SPOTIFY_CLIENT_SECRET", "\"${localProperties['SPOTIFY_CLIENT_SECRET']}\"")
+
     }
 
     buildTypes {

@@ -1,7 +1,6 @@
 package com.coderops.remote.service
 
 import com.coderops.local.PreferenceStorage
-import com.coderops.remote.BuildConfig
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -11,26 +10,22 @@ import javax.inject.Singleton
 
 @Singleton
 class AuthInterceptor @Inject constructor(
-    private val preferenceStorage: PreferenceStorage,
+    private val preferenceStorage: PreferenceStorage
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
+        val accessToken = preferenceStorage.accessToken
         val language = Locale.getDefault().language
-        val apiKey = BuildConfig.API_KEY
-        val sessionId = preferenceStorage.sessionId
-
         val request = chain.request()
+
+        // Add OAuth 2.0 token to the Authorization header
+        val requestBuilder = request.newBuilder()
+            .addHeader("Authorization", "Bearer $accessToken")
+
+        // Add additional query parameters if needed
         val url: HttpUrl = request.url.newBuilder()
-            .addQueryParameter(API_KEY, apiKey)
-            .addQueryParameter(SESSION_ID, sessionId)
-            .addQueryParameter(LANGUAGE, language)
+            .addQueryParameter("language", language)
             .build()
 
-        return chain.proceed(request.newBuilder().url(url).build())
-    }
-
-    private companion object {
-        const val API_KEY = "api_key"
-        const val SESSION_ID = "session_id"
-        const val LANGUAGE = "language"
+        return chain.proceed(requestBuilder.url(url).build())
     }
 }

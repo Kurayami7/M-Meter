@@ -1,362 +1,68 @@
 package com.coderops.remote.service
 
-import com.coderops.remote.request.AddMediaToListRequest
-import com.coderops.remote.request.CreateUserListRequest
-import com.coderops.remote.request.DeleteMovieRequest
-import com.coderops.remote.request.FavoriteRequest
-import com.coderops.remote.request.ListRequest
-import com.coderops.remote.request.LoginRequest
-import com.coderops.remote.request.RateRequest
-import com.coderops.remote.request.RatingEpisodeDetailsRequest
-import com.coderops.remote.request.RatingRequest
-import com.coderops.remote.request.WatchlistRequest
-import com.coderops.remote.response.DataWrapperResponse
-import com.coderops.remote.response.GenresWrapperResponse
-import com.coderops.remote.response.ListDetailsWrapperResponse
-import com.coderops.remote.response.ListResponse
-import com.coderops.remote.response.auth.RequestTokenResponse
-import com.coderops.remote.response.auth.SessionResponse
-import com.coderops.remote.response.dto.GenreMovieRemoteDto
-import com.coderops.remote.response.dto.GenreTVRemoteDto
-import com.coderops.remote.response.dto.ListRemoteDto
-import com.coderops.remote.response.dto.MovieRemoteDto
-import com.coderops.remote.response.dto.MoviesByPeopleResponse
-import com.coderops.remote.response.dto.PeopleDetailsResponse
-import com.coderops.remote.response.dto.PeopleRemoteDto
-import com.coderops.remote.response.dto.StatusResponse
-import com.coderops.remote.response.dto.TVShowsRemoteDto
-import com.coderops.remote.response.dto.TvDetailsCreditRemoteDto
-import com.coderops.remote.response.dto.TvDetailsRemoteDto
-import com.coderops.remote.response.dto.TvRemoteDto
-import com.coderops.remote.response.dto.TvReviewRemoteDto
-import com.coderops.remote.response.dto.TvShowsByPeopleResponse
-import com.coderops.remote.response.dto.UserListRemoteDto
-import com.coderops.remote.response.dto.YoutubeVideoDetailsRemoteDto
-import com.coderops.remote.response.dto.episode_details.EpisodeDetailsCastRemoteDto
-import com.coderops.remote.response.dto.episode_details.EpisodeDetailsRemoteDto
-import com.coderops.remote.response.dto.episode_details.RatingEpisodeDetailsRemoteDto
-import com.coderops.remote.response.dto.my_rated.MyRatedMovieDto
-import com.coderops.remote.response.dto.my_rated.MyRatedTvShowDto
-import com.coderops.remote.response.dto.profile.ProfileRemoteDto
-import com.coderops.remote.response.dto.season_details.SeasonDetailsDto
-import com.coderops.remote.response.movieDetails.MovieDetailsDto
-import com.coderops.remote.response.movieDetails.ReviewsDto
+import com.coderops.remote.response.spotify.*
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface MovieService {
-
-    /// region auth
-    @FormUrlEncoded
-    @POST("authentication/session/new")
-    suspend fun createSession(@Field("request_token") requestToken: String): Response<SessionResponse>
-
-    @GET("authentication/token/new")
-    suspend fun createRequestToken(): Response<RequestTokenResponse>
-
-    @POST("authentication/token/validate_with_login")
-    suspend fun login(@Body loginRequest: LoginRequest): Response<RequestTokenResponse>
-    /// endregion
-
-    /// region movie
-    @GET("movie/top_rated")
-    suspend fun getTopRatedMovies(@Query("page") page: Int = 1): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("movie/popular")
-    suspend fun getPopularMovies(@Query("page") page: Int = 1): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("movie/upcoming")
-    suspend fun getUpcomingMovies(@Query("page") page: Int = 1): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("movie/now_playing")
-    suspend fun getNowPlayingMovies(@Query("page") page: Int = 1): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("movie/{movie_id}/recommendations")
-    suspend fun getRecommendedMovies(
-        @Query("page") page: Int = 1,
-        @Path("movie_id") movieId: Int
-    ): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("movie/latest")
-    suspend fun getLatestMovie(): Response<MovieRemoteDto>
-
-    @GET("trending/movie/{time_window}")
-    suspend fun getTrendingMovies(
-        @Path("time_window") timeWindow: String = "day",
-        @Query("page") page: Int = 1
-    ): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    ///endregion
-
-    /// region trailer
-    @GET("movie/{movie_id}/videos")
-    suspend fun getTrailerVideoForMovie(
-        @Path("movie_id") tvShowId: Int
-    ): Response<DataWrapperResponse<YoutubeVideoDetailsRemoteDto>>
-
-    @GET("tv/{tv_id}/videos")
-    suspend fun getTrailerVideoForTvShow(
-        @Path("tv_id") tvShowId: Int
-    ): Response<DataWrapperResponse<YoutubeVideoDetailsRemoteDto>>
-
-    @GET("tv/{series_id}/season/{season_number}/episode/{episode_number}/videos")
-    suspend fun getEpisodeVideos(
-        @Path("series_id") seriesId: Int,
-        @Path("season_number") seasonNumber: Int,
-        @Path("episode_number") episodeNumber: Int
-    ): Response<DataWrapperResponse<YoutubeVideoDetailsRemoteDto>>
-
-    ///endregion
-
-    /// region tv
-
-    @GET("tv/airing_today")
-    suspend fun getAiringTodayTVShows(@Query("page") page: Int = 1): Response<DataWrapperResponse<TVShowsRemoteDto>>
-
-    @GET("tv/top_rated")
-    suspend fun getTopRatedTVShows(@Query("page") page: Int = 1): Response<DataWrapperResponse<TVShowsRemoteDto>>
-
-    @GET("tv/on_the_air")
-    suspend fun getOnTheAirTVShows(@Query("page") page: Int = 1): Response<DataWrapperResponse<TVShowsRemoteDto>>
-
-    @GET("tv/popular")
-    suspend fun getPopularTVShows(@Query("page") page: Int = 1): Response<DataWrapperResponse<TVShowsRemoteDto>>
-    /// endregion
+interface SpotifyService {
 
     /// region search
-    @GET("search/movie")
-    suspend fun searchForMovies(
-        @Query("query") query: String,
-        @Query("year") year: Int? = null,
-        @Query("primary_release_year") primaryReleaseYear: Int? = null,
-        @Query("region") region: String? = null,
-        @Query("page") page: Int = 1,
-    ): Response<DataWrapperResponse<MovieRemoteDto>>
+    @GET("search")
+    suspend fun searchTracks(
+        @Query("q") query: String,
+        @Query("type") type: String = "track"
+    ): Response<SpotifySearchResponse>
 
-    @GET("search/tv")
-    suspend fun searchForTv(
-        @Query("query") query: String,
-        @Query("year") year: Int? = null,
-        @Query("first_air_date_year") firstAirDateYear: String? = null,
-        @Query("region") region: String? = null,
-        @Query("page") page: Int = 1,
-    ): Response<DataWrapperResponse<TvRemoteDto>>
+    @GET("search")
+    suspend fun searchArtists(
+        @Query("q") query: String,
+        @Query("type") type: String = "artist"
+    ): Response<SpotifySearchResponse>
 
-    @GET("search/person")
-    suspend fun searchForPeople(
-        @Query("query") query: String,
-        @Query("page") page: Int = 1,
-    ): Response<DataWrapperResponse<PeopleRemoteDto>>
-
+    @GET("search")
+    suspend fun searchAlbums(
+        @Query("q") query: String,
+        @Query("type") type: String = "album"
+    ): Response<SpotifySearchResponse>
     /// endregion
 
-    /// region popular people
-    @GET("person/popular")
-    suspend fun getPopularPeople(@Query("page") page: Int = 1): Response<DataWrapperResponse<PeopleRemoteDto>>
+    /// region tracks
+    @GET("tracks/{id}")
+    suspend fun getTrackDetails(@Path("id") trackId: String): Response<Track>
+
+    @GET("tracks")
+    suspend fun getSeveralTracks(@Query("ids") trackIds: String): Response<SeveralTracksResponse>
     /// endregion
 
-    /// region genres
-    @GET("genre/movie/list")
-    suspend fun getListOfGenresForMovies(
-        @Query("language") language: String = "en"
-    ): Response<GenresWrapperResponse<GenreMovieRemoteDto>>
+    /// region artists
+    @GET("artists/{id}")
+    suspend fun getArtistDetails(@Path("id") artistId: String): Response<Artist>
 
-    @GET("genre/tv/list")
-    suspend fun getListOfGenresForTvs(
-        @Query("language") language: String = "en"
-    ): Response<GenresWrapperResponse<GenreTVRemoteDto>>
-    ///endregion
-
-    /// region account
-    @GET("account")
-    suspend fun getAccountDetails(
-        @Query("session_id") sessionId: String = " "
-    ): Response<ProfileRemoteDto>
-    ///endregion
-
-    /// region movie details
-    @GET("movie/{movieId}?&append_to_response=videos,credits,recommendations,reviews")
-    suspend fun getMovieDetails(
-        @Path("movieId") movieId: Int
-    ): Response<MovieDetailsDto>
-
-    @Headers("Content-Type: application/json;charset=utf-8")
-    @POST("movie/{movieId}/rating")
-    suspend fun setMovieRate(
-        @Body ratingRequest: RatingRequest,
-        @Path("movieId") movieId: Int
-    ): Response<StatusResponse>
+    @GET("artists/{id}/albums")
+    suspend fun getArtistAlbums(
+        @Path("id") artistId: String,
+        @Query("include_groups") includeGroups: String? = null,
+        @Query("market") market: String? = null,
+        @Query("limit") limit: Int? = 20,
+        @Query("offset") offset: Int? = 0
+    ): Response<AlbumsResponse>
     /// endregion
 
-    /// region season details
-    @GET("tv/{series_id}/season/{season_number}")
-    suspend fun getSeasonDetails(
-        @Path("series_id") series_id: Int,
-        @Path("season_number") season_number: Int
-    ): Response<SeasonDetailsDto>
-    ///endregion
+    /// region albums
+    @GET("albums/{id}")
+    suspend fun getAlbumDetails(@Path("id") albumId: String): Response<Album>
 
-    /// region tv details
-    @GET("tv/{tv_id}")
-    suspend fun getTvDetails(
-        @Path("tv_id") tvShowId: Int
-    ): Response<TvDetailsRemoteDto>
+    @GET("albums")
+    suspend fun getSeveralAlbums(@Query("ids") albumIds: String): Response<SeveralAlbumsResponse>
 
-    @GET("tv/{tv_id}/aggregate_credits")
-    suspend fun getTvDetailsCredit(
-        @Path("tv_id") tvShowId: Int
-    ): Response<TvDetailsCreditRemoteDto>
-
-    @POST("tv/{tv_id}/rating?")
-    suspend fun rateTvShow(
-        @Body rateRequest: RateRequest, @Path("tv_id") tvShowId: Int,
-    ): Response<StatusResponse>
-
-    @GET("tv/{tv_id}/reviews")
-    suspend fun getTvShowReviews(
-        @Path("tv_id") tvShowId: Int
-    ): Response<DataWrapperResponse<TvReviewRemoteDto>>
-
-    @GET("tv/{tv_id}/recommendations")
-    suspend fun getTvShowRecomendations(
-        @Path("tv_id") tvShowId: Int
-    ): Response<DataWrapperResponse<TVShowsRemoteDto>>
-
-    @GET("tv/{tv_id}/videos")
-    suspend fun getTvShowYoutubeVideoDetails(
-        @Path("tv_id") tvShowId: Int
-    ): Response<DataWrapperResponse<YoutubeVideoDetailsRemoteDto>>
+    @GET("albums/{id}/tracks")
+    suspend fun getAlbumTracks(
+        @Path("id") albumId: String,
+        @Query("market") market: String? = null,
+        @Query("limit") limit: Int? = 20,
+        @Query("offset") offset: Int? = 0
+    ): Response<TracksResponse>
     /// endregion
-
-    //region my list
-    @GET("account/account_id/lists")
-    suspend fun getUserLists(): Response<DataWrapperResponse<UserListRemoteDto>>
-
-    @POST("list/{list_id}/add_item")
-    suspend fun postUserMedia(
-        @Path("list_id") listId: Int,
-        @Body mediaId: AddMediaToListRequest
-    ): Response<StatusResponse>
-
-    @POST("list")
-    suspend fun createUserList(@Body name: CreateUserListRequest): Response<StatusResponse>
-
-
-    @GET("account/{account_id}/favorite/movies")
-    suspend fun getFavoriteMovies(): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("account/{account_id}/favorite/tv")
-    suspend fun getFavoriteTv(): Response<DataWrapperResponse<TvRemoteDto>>
-
-
-
-    @GET("account/{account_id}/watchlist/movies")
-    suspend fun getWatchlist(): Response<DataWrapperResponse<MovieRemoteDto>>
-
-    @GET("account/{account_id}/watchlist/tv")
-    suspend fun getWatchlistTv(): Response<DataWrapperResponse<TvRemoteDto>>
-
-
-    @POST("account/{account_id}/watchlist")
-    suspend fun addWatchlist(
-        @Body watchlistRequest: WatchlistRequest,
-    ): Response<StatusResponse>
-
-
-    @POST("list")
-    suspend fun addList(@Body listRequest: ListRequest): Response<ListResponse>
-
-    @DELETE("list/{list_id}")
-    suspend fun deleteList(@Path("list_id") listId: Int): Response<StatusResponse>
-
-
-    @GET("account/{account_id}/lists")
-    suspend fun getLists(): Response<DataWrapperResponse<ListRemoteDto>>
-
-
-    @GET("list/{list_id}")
-    suspend fun getDetailsList(@Path("list_id") listId: Int)
-            : Response<ListDetailsWrapperResponse<MovieRemoteDto>>
-
-    @POST("list/{list_id}/remove_item")
-    suspend fun deleteMovieDetailsList(
-        @Path("list_id") listId: Int,
-        @Body movieRequest: DeleteMovieRequest,
-    ): Response<StatusResponse>
-
-
-    @GET("movie/{movieId}/reviews")
-    suspend fun getMovieReviews(
-        @Path("movieId") movieId: Int,
-        @Query("page") page: Int = 1
-    ): Response<ReviewsDto>
-
-    @POST("account/account_id/favorite")
-    suspend fun addFavorite(@Body markAsFavorite: FavoriteRequest): Response<StatusResponse>
-    //endregion
-
-    /// region episode
-    @GET("tv/{series_id}/season/{season_number}/episode/{episode_number}")
-    suspend fun getEpisodeDetails(
-        @Path("series_id") seriesId: Int,
-        @Path("season_number") seasonNumber: Int,
-        @Path("episode_number") episodeNumber: Int
-    ): Response<EpisodeDetailsRemoteDto>
-
-    @Headers("Content-Type: application/json;charset=utf-8")
-    @POST("tv/{series_id}/season/{season_number}/episode/{episode_number}/rating")
-    suspend fun postEpisodeRating(
-        @Body rate: RatingEpisodeDetailsRequest,
-        @Path("series_id") seriesId: Int,
-        @Path("season_number") seasonNumber: Int,
-        @Path("episode_number") episodeNumber: Int
-    ): Response<RatingEpisodeDetailsRemoteDto>
-
-    @GET("tv/{series_id}/season/{season_number}/episode/{episode_number}/credits")
-    suspend fun getEpisodeCast(
-        @Path("series_id") seriesId: Int,
-        @Path("season_number") seasonNumber: Int,
-        @Path("episode_number") episodeNumber: Int
-    ): Response<EpisodeDetailsCastRemoteDto>
-
-///endregion
-
-    /// region trailer
-
-    /// endregion
-
-    /// region My rating
-    @GET("account/{account_id}/rated/movies")
-    suspend fun getRatedMovies(
-        @Query("page") page: Int = 1
-    ): Response<DataWrapperResponse<MyRatedMovieDto>>
-
-    @GET("account/{account_id}/rated/tv")
-    suspend fun getRatedTv(
-        @Query("page") page: Int = 1
-    ): Response<DataWrapperResponse<MyRatedTvShowDto>>
-
-    ///endregion
-
-
-    /// region people details
-
-    @GET("person/{person_id}")
-    suspend fun getPerson(@Path("person_id") person_id: Int): Response<PeopleDetailsResponse>
-
-    @GET("person/{person_id}/movie_credits")
-    suspend fun getMoviesByPerson(@Path("person_id") person_id: Int): Response<MoviesByPeopleResponse>
-
-    @GET("person/{person_id}/tv_credits")
-    suspend fun getTvShowsByPerson(@Path("person_id") person_id: Int): Response<TvShowsByPeopleResponse>
-
-    ///endregion
 }
