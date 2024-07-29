@@ -1,4 +1,195 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.coderops.viewmodel.LoginViewModel" />-->
+
+<!--        <variable-->
+<!--            name="registrationViewModel"-->
+<!--            type="com.coderops.viewmodel.register.RegistrationViewModel" />-->
+<!--    </data>-->
+
+<!--    <androidx.constraintlayout.motion.widget.MotionLayout-->
+<!--        android:id="@+id/login_motion_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layoutDescription="@xml/fragment_login_xml_landscape_constraintlayout_scene">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageview_login"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginBottom="-60dp"-->
+<!--            android:scaleType="matrix"-->
+<!--            android:src="@drawable/login_pic"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/view_background"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/view_background"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:background="@drawable/header_background"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/guideline_20" />-->
+
+<!--        <androidx.constraintlayout.widget.Guideline-->
+<!--            android:id="@+id/guideline_20"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintGuide_percent="0.15" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textview_username"-->
+<!--            style="@style/TextStyle.BodySmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/spacing_tiny_4dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_giant_32dp"-->
+<!--            android:text="@string/username"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/edittext_username"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/view_background"-->
+<!--            tools:ignore="TouchTargetSizeCheck" />-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/edittext_password"-->
+<!--            style="@style/TextInputLayoutStyle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/spacing_medium_16dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_tiny_4dp"-->
+<!--            app:boxStrokeWidth="0dp"-->
+<!--            app:boxStrokeWidthFocused="0dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView"-->
+<!--            app:passwordToggleDrawable="@drawable/selector_password_icon"-->
+<!--            app:passwordToggleEnabled="true"-->
+<!--            app:passwordToggleTint="@color/black">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:maxLines="1"-->
+<!--                android:padding="@dimen/spacing_medium_16dp"-->
+<!--                android:text="@={viewModel.state.password}"-->
+<!--                android:textAppearance="@style/TextStyle.BodyMedium"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:hint="@string/password_hint"-->
+<!--                android:textColorHint="@color/black"-->
+<!--                app:setTipError="@{viewModel.state.passwordError}" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/edittext_username"-->
+<!--            style="@style/TextInputLayoutStyle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/spacing_medium_16dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_tiny_4dp"-->
+<!--            app:boxStrokeWidth="0dp"-->
+<!--            app:boxStrokeWidthFocused="0dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textview_username">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:maxLength="24"-->
+<!--                android:maxLines="1"-->
+<!--                android:padding="@dimen/spacing_medium_16dp"-->
+<!--                android:text="@={viewModel.state.userName}"-->
+<!--                android:textAppearance="@style/TextStyle.BodyMedium"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:setTipError="@{viewModel.state.userNameError}"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            style="@style/TextStyle.BodySmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/spacing_tiny_4dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_medium_16dp"-->
+<!--            android:text="@string/password"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/edittext_password"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/edittext_username" />-->
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:indeterminate="true"-->
+<!--            android:indeterminateTint="@color/primary"-->
+<!--            android:indeterminateTintMode="src_atop"-->
+<!--            app:isVisible="@{viewModel.state.loading}"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/button_login"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/button_login" />-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/button_login"-->
+<!--            style="@style/PrimaryButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/spacing_extra_giant_48dp"-->
+<!--            android:layout_marginHorizontal="@dimen/spacing_medium_16dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_giant_32dp"-->
+<!--            android:onClick="@{()->viewModel.login()}"-->
+<!--            android:text="@string/login"-->
+<!--            app:isVisible="@{!viewModel.state.loading}"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/edittext_password" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textview_do_u_have_account"-->
+<!--            style="@style/TextStyle.BodySmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/spacing_medium_16dp"-->
+<!--            android:layout_marginTop="@dimen/spacing_large_24dp"-->
+<!--            android:text="@string/don_t_have_an_account"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/textview_signup"-->
+<!--            app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/button_login" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textview_signup"-->
+<!--            style="@style/TextStyle.BodySmall"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/spacing_tiny_4dp"-->
+<!--            android:onClick="@{() -> registrationViewModel.onClickRegister()}"-->
+<!--            android:text="@string/signup"-->
+<!--            android:textColor="@color/primary"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/textview_do_u_have_account"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/textview_do_u_have_account"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/textview_do_u_have_account" />-->
+
+<!--    </androidx.constraintlayout.motion.widget.MotionLayout>-->
+<!--</layout>-->
+
+
+
+
+
+
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -19,34 +210,30 @@
         android:layout_height="match_parent"
         app:layoutDescription="@xml/fragment_login_xml_landscape_constraintlayout_scene">
 
+        <!-- Login ImageView -->
         <ImageView
             android:id="@+id/imageview_login"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="-60dp"
-            android:scaleType="matrix"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/login_pic"
-            app:layout_constraintBottom_toTopOf="@+id/view_background"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/login_image_description"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Background View -->
         <View
             android:id="@+id/view_background"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/header_background"
+            app:layout_constraintTop_toBottomOf="@id/imageview_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_20" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
-
+        <!-- Login Form -->
         <TextView
             android:id="@+id/textview_username"
             style="@style/TextStyle.BodySmall"
@@ -61,45 +248,19 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edittext_password"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium_16dp"
-            android:layout_marginTop="@dimen/spacing_tiny_4dp"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:passwordToggleDrawable="@drawable/selector_password_icon"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="@dimen/spacing_medium_16dp"
-                android:text="@={viewModel.state.password}"
-                android:textAppearance="@style/TextStyle.BodyMedium"
-                android:textColor="@color/black"
-                android:hint="@string/password_hint"
-                android:textColorHint="@color/black"
-                app:setTipError="@{viewModel.state.passwordError}" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edittext_username"
             style="@style/TextInputLayoutStyle"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_medium_16dp"
             android:layout_marginTop="@dimen/spacing_tiny_4dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/textview_username">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_username"
+            app:layout_constraintWidth_max="600dp">
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -112,6 +273,8 @@
                 android:text="@={viewModel.state.userName}"
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/black"
+                android:textSize="17sp"
+                android:hint="@string/username_hint"
                 app:setTipError="@{viewModel.state.userNameError}"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -129,6 +292,38 @@
             app:layout_constraintStart_toStartOf="@+id/edittext_password"
             app:layout_constraintTop_toBottomOf="@+id/edittext_username" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edittext_password"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_medium_16dp"
+            android:layout_marginTop="@dimen/spacing_tiny_4dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintWidth_max="600dp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="@dimen/spacing_medium_16dp"
+                android:text="@={viewModel.state.password}"
+                android:textAppearance="@style/TextStyle.BodyMedium"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:hint="@string/password_hint"
+                android:textColorHint="@color/black"
+                app:setTipError="@{viewModel.state.passwordError}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -142,17 +337,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/button_login" />
 
+        <!-- Added max width constraint -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_login"
             style="@style/PrimaryButton"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/spacing_extra_giant_48dp"
             android:layout_marginHorizontal="@dimen/spacing_medium_16dp"
-            android:layout_marginTop="@dimen/spacing_giant_32dp"
+            android:layout_marginTop="@dimen/spacing_giant_15dp"
             android:onClick="@{()->viewModel.login()}"
             android:text="@string/login"
+            android:textSize="18sp"
             app:isVisible="@{!viewModel.state.loading}"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_password" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_password"
+            app:layout_constraintWidth_max="300dp" />
 
         <TextView
             android:id="@+id/textview_do_u_have_account"
@@ -160,8 +362,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium_16dp"
-            android:layout_marginTop="@dimen/spacing_large_24dp"
+            android:layout_marginTop="@dimen/spacing_large_16dp"
             android:text="@string/don_t_have_an_account"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/textview_signup"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -175,7 +378,8 @@
             android:layout_marginStart="@dimen/spacing_tiny_4dp"
             android:onClick="@{() -> registrationViewModel.onClickRegister()}"
             android:text="@string/signup"
-            android:textColor="@color/primary"
+            android:textColor="#009688"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/textview_do_u_have_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textview_do_u_have_account"
@@ -183,3 +387,4 @@
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
+

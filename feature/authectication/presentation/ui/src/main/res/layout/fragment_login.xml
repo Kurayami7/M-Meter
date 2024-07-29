@@ -66,6 +66,7 @@
             android:layout_marginTop="@dimen/spacing_giant_32dp"
             android:text="@string/username"
             android:textColor="@color/on_background_60"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/edittext_username"
             app:layout_constraintTop_toTopOf="@+id/view_background"
             tools:ignore="TouchTargetSizeCheck" />
@@ -95,6 +96,7 @@
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/on_background_60"
                 android:hint="@string/password_hint"
+                android:textSize="18sp"
                 app:setTipError="@{viewModel.state.passwordError}" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -122,6 +124,7 @@
                 android:textAppearance="@style/TextStyle.BodyMedium"
                 android:textColor="@color/on_background_60"
                 android:hint="@string/username_hint"
+                android:textSize="18sp"
                 app:setTipError="@{viewModel.state.userNameError}" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -135,6 +138,7 @@
             android:layout_marginTop="@dimen/spacing_medium_16dp"
             android:text="@string/password"
             android:textColor="@color/on_background_60"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/edittext_password"
             app:layout_constraintTop_toBottomOf="@+id/edittext_username" />
 
@@ -157,9 +161,10 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/spacing_extra_giant_48dp"
             android:layout_marginHorizontal="@dimen/spacing_medium_16dp"
-            android:layout_marginTop="@dimen/spacing_giant_32dp"
+            android:layout_marginTop="@dimen/spacing_medium_16dp"
             android:onClick="@{()->viewModel.login()}"
             android:text="@string/login"
+            android:textSize="18sp"
             app:isVisible="@{!viewModel.state.loading}"
             app:layout_constraintTop_toBottomOf="@+id/edittext_password" />
 
@@ -171,6 +176,7 @@
             android:layout_marginStart="@dimen/spacing_medium_16dp"
             android:layout_marginTop="@dimen/spacing_large_24dp"
             android:text="@string/don_t_have_an_account"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/textview_signup"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -184,6 +190,7 @@
             android:layout_marginStart="@dimen/spacing_tiny_4dp"
 
             android:text="@string/signup"
+            android:textSize="18sp"
             android:textColor="@color/primary"
             app:layout_constraintBottom_toBottomOf="@+id/textview_do_u_have_account"
             app:layout_constraintEnd_toEndOf="parent"
