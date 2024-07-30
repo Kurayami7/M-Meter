@@ -30,5 +30,10 @@
     <color name="gradient4">#F5F5F5</color>
 
 
+    <color name="SignUp">#FF6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+
+
+
     <color name="black">#000000</color>
 </resources>

@@ -60,16 +60,23 @@ dependencies {
     implementation project(path: ':feature:trvia:presentation:ui')
     implementation project(path: ':feature:trvia:presentation:viewmodel')
 
+    //noinspection GradleDependency
     implementation "androidx.core:core-ktx:$androidXVersion"
+    //noinspection GradleDependency
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    //noinspection GradleDependency
     implementation "com.google.android.material:material:$materialVersion"
     implementation 'com.google.firebase:firebase-auth-ktx:23.0.0'
     testImplementation "junit:junit:$junitVersion"
+    //noinspection GradleDependency
     androidTestImplementation "androidx.test.ext:junit:$junitTestVersion"
+    //noinspection GradleDependency
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoTestVersion"
 
     /// navigation
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-fragment-ktx:$androidxNavigationVersion"
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-ui-ktx:$androidxNavigationVersion"
 
     /// coroutine
@@ -85,8 +92,10 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
 
     /// room
+    //noinspection GradleDependency
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+    //noinspection GradleDependency
     implementation("androidx.room:room-ktx:$roomVersion")
     /// Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:$preferencesDataStoreVersion"
@@ -96,6 +105,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofitLoggingVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
-    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-database-ktx")
 }

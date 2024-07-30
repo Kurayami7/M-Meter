@@ -3,4 +3,6 @@
     <dimen name="spacing_tiny_2dp">2dp</dimen>
     <dimen name="video_player_height_328dp">328dp</dimen>
     <dimen name="profile_image_size">123dp</dimen>
+    <dimen name="spacing_extra_extra_giant_50dp" />
+    <dimen name="spacing_large_20dp" />
 </resources>

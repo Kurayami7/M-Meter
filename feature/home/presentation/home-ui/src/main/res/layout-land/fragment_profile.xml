@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.coderops.viewmodel.profile.ProfileListener" />
+
+        <variable
+            name="viewModel"
+            type="com.coderops.viewmodel.profile.ProfileViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/spacing_custom_12dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/spacing_medium_16dp">
+
+        <ImageView
+            android:id="@+id/image_view_login"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginStart="@dimen/spacing_medium_16dp"
+            android:layout_marginTop="@dimen/spacing_medium_16dp"
+            android:layout_marginEnd="@dimen/spacing_medium_16dp"
+            android:src="@drawable/image_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_login_title"
+            style="@style/TextStyle.BodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium_16dp"
+            android:layout_marginTop="@dimen/spacing_large_20dp"
+            android:layout_marginEnd="@dimen/spacing_medium_16dp"
+            android:ellipsize="middle"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/login_title"
+            android:textAlignment="center"
+            android:textColor="@color/on_background_87"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view_login" />
+
+        <Button
+            android:id="@+id/button_login"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium_16dp"
+            android:layout_marginEnd="@dimen/spacing_medium_16dp"
+            android:layout_marginBottom="@dimen/spacing_extra_extra_giant_56dp"
+            android:backgroundTint="#199C90"
+            android:onClick="@{()->viewModel.ocClickLogIn()}"
+            android:text="@string/login_signup"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textAppearance="@font/montserrat_semibold"
+            app:layout_constraintTop_toBottomOf="@id/text_view_login_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_view_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:profileUrl="@{viewModel.state.avatarUrl}"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/text_view_profile_username"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_one_1dp"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:gravity="center"
+            android:text="@{viewModel.state.username}"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view_profile"
+            tools:text=" @el-mtarsham" />
+
+        <TextView
+            android:id="@+id/text_view_favorite"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/height_field"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:background="@drawable/custom_card_background"
+            android:drawableStart="@drawable/ic_heart"
+            android:drawablePadding="@dimen/spacing_small_8dp"
+            android:drawableTint="@color/on_background_60"
+            android:gravity="center_vertical"
+            android:onClick="@{()->viewModel.onClickFavorite()}"
+            android:padding="@dimen/spacing_small_8dp"
+            android:text="@string/favorite"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_profile_username" />
+
+        <TextView
+            android:id="@+id/text_view_watchlist"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/height_field"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:background="@drawable/custom_card_background"
+            android:drawableStart="@drawable/ic_bookmark"
+            android:drawablePadding="@dimen/spacing_small_8dp"
+            android:drawableTint="@color/on_background_60"
+            android:gravity="center_vertical"
+            android:onClick="@{()->viewModel.onClickWatchlist()}"
+            android:padding="@dimen/spacing_small_8dp"
+            android:text="@string/playlist"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_favorite" />
+
+        <TextView
+            android:id="@+id/text_view_watch_history"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/height_field"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:background="@drawable/custom_card_background"
+            android:drawableStart="@drawable/ic_clock_24"
+            android:drawablePadding="@dimen/spacing_small_8dp"
+            android:drawableTint="@color/on_background_60"
+            android:gravity="center_vertical"
+            android:onClick="@{()->viewModel.onClickWatchHistory()}"
+            android:padding="@dimen/spacing_small_8dp"
+            android:text="@string/song_history"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_watchlist" />
+
+
+        <TextView
+            android:id="@+id/text_view_theme"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="500dp"
+            android:layout_height="@dimen/height_field"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:background="@drawable/custom_card_background"
+            android:drawableStart="@drawable/ic_sun"
+            android:drawablePadding="@dimen/spacing_small_8dp"
+            android:drawableTint="@color/on_background_60"
+            android:gravity="center_vertical"
+            android:padding="@dimen/spacing_small_8dp"
+            android:text="@string/theme"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_watch_history" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_botton_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:layout_marginEnd="220dp"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_theme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_view_theme"
+            app:showText="false" />
+
+
+
+
+        <TextView
+            android:id="@+id/text_view_logout"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            android:drawableStart="@drawable/ic_logout"
+            android:drawablePadding="@dimen/spacing_small_8dp"
+            android:drawableTint="@color/on_background_60"
+            android:gravity="center_vertical"
+            android:onClick="@{()->viewModel.onClickLogout()}"
+            android:padding="@dimen/spacing_small_8dp"
+            android:text="@string/logout"
+            android:textColor="@color/on_background_60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_theme" />
+
+        <include
+            android:id="@+id/lottie_animation_view_no_network"
+            layout="@layout/layout_no_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/textview_error_occurred"
+            style="@style/TextStyle.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_occured"
+            app:layout_constraintTop_toBottomOf="@id/lottie_animation_view_no_network"
+            android:layout_marginTop="@dimen/spacing_small_8dp"
+            app:layout_constraintEnd_toEndOf="@+id/lottie_animation_view_no_network"
+            app:layout_constraintStart_toStartOf="@+id/lottie_animation_view_no_network" />
+
+
+        <include
+            layout="@layout/layout_loading"
+            android:id="@+id/progressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:isVisible="@{viewModel.state.isLoading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="textview_error_occurred,lottie_animation_view_no_network"
+            app:isVisibleOrGone="@{viewModel.state.error != null}" />
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/when_user_loggedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="image_view_profile,
+            text_view_profile_username,text_view_favorite,
+            text_view_watch_history, text_view_watchlist,
+            text_view_theme,switch_botton_theme,text_view_logout"
+            app:isVisible="@{(!viewModel.state.loading) &amp;&amp; viewModel.state.loggedIn}" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/when_user_not_loggedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="button_login,
+            image_view_login,text_view_login_title"
+            app:isVisibleOrGone="@{(!viewModel.state.loading) &amp;&amp; !viewModel.state.loggedIn}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

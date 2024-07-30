@@ -16,6 +16,8 @@
     <dimen name="spacing_extra_giant_48dp">48dp</dimen>
     <dimen name="spacing_extra_extra_giant_56dp">56dp</dimen>
     <dimen name="spacing__extra_extra_extra_giant_70dp">70dp</dimen>
+    <dimen name="spacing_large_16dp">16dp</dimen>
+    <dimen name="spacing_giant_16dp">16dp</dimen>
 
 
     <!--text dimens-->
@@ -77,4 +79,6 @@
     <dimen name="height_image_review">35dp</dimen>
     <dimen name="width_video_player">165dp</dimen>
     <dimen name="width_chip_myrated">180dp</dimen>
+
+
 </resources>

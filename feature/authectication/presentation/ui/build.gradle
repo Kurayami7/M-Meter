@@ -40,7 +40,9 @@ android {
         buildConfig true
     }
     packagingOptions {
-        exclude 'com/coderops/ui/generated/callback/OnClickListener$Listener.class'
+        resources {
+            excludes += ['com/coderops/ui/generated/callback/OnClickListener$Listener.class']
+        }
     }
 }
 
