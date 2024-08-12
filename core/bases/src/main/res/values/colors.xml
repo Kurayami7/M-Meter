@@ -10,7 +10,7 @@
     <color name="on_background_60">#000000</color>
     <color name="on_background_38">#F4F2F2</color>
     <color name="white">#ECDEDE</color>
-    <color name="card">#5DBAC6</color>
+    <color name="card">#009688</color>
     <color name="border">#0C0C0C</color>
     <color name="login_form_background">@color/background</color>
     <color name="edittext_background">@color/card</color>
@@ -24,7 +24,7 @@
     <color name="red">#ff0000</color>
     <color name="orangeRed">#FF3D00</color>
     <color name="gradient1">#B3FFFFFF</color>
-    <color name="lottie_color">#1CECDB</color>
+    <color name="lottie_color">#009688</color>
     <color name="gradient2">#00FFFFFF</color>
     <color name="gradient3">#00FFFFFF</color>
     <color name="gradient4">#F5F5F5</color>
