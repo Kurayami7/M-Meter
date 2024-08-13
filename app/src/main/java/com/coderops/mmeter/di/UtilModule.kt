@@ -1,4 +1,4 @@
-package com.coderops.melodymeter.di
+package com.coderops.mmeter.di
 
 import dagger.Module
 import dagger.Provides

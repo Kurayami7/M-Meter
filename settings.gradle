@@ -17,7 +17,7 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "MelodyMeter"
+rootProject.name = "MMeter"
 include ':app'
 include ':core:data:local'
 include ':core:data:remote'

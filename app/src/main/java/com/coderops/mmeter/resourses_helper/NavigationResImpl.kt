@@ -1,4 +1,4 @@
-package com.coderops.melodymeter.resourses_helper
+package com.coderops.mmeter.resourses_helper
 
 import com.coderops.bases.NavigationRes
 import javax.inject.Inject

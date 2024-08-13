@@ -1,4 +1,4 @@
-package com.coderops.melodymeter
+package com.coderops.mmeter
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.coderops.melodymeter", appContext.packageName)
+        assertEquals("com.coderops.mmeter", appContext.packageName)
     }
 }

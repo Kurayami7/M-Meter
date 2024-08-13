@@ -1,4 +1,4 @@
-package com.coderops.melodymeter.di
+package com.coderops.mmeter.di
 
 import com.coderops.repository.AuthRepository
 import com.coderops.repository.MovieRepository

@@ -11,10 +11,10 @@ def localProperties = new Properties()
 localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
 android {
-    namespace 'com.coderops.melodymeter'
+    namespace 'com.coderops.mmeter'
     compileSdk rootProject.compileSdkVersion
     defaultConfig {
-        applicationId "com.coderops.melodymeter"
+        applicationId "com.coderops.mmeter"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
         versionCode 1
