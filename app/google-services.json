@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "1016595457188",
-    "project_id": "melody-meter",
-    "storage_bucket": "melody-meter.appspot.com"
+    "project_id": "m-meter",
+    "storage_bucket": "m-meter.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:1016595457188:android:abce6cbad49703f360b231",
         "android_client_info": {
-          "package_name": "com.coderops.melodymeter"
+          "package_name": "com.coderops.mmeter"
         }
       },
       "oauth_client": [],

@@ -1,6 +1,6 @@
-package com.coderops.melodymeter.di
+package com.coderops.mmeter.di
 
-import com.coderops.melodymeter.BuildConfig
+import com.coderops.mmeter.BuildConfig
 import com.coderops.remote.service.AuthInterceptor
 import com.coderops.remote.service.MovieService
 import dagger.Module

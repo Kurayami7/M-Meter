@@ -1,9 +1,9 @@
-package com.coderops.melodymeter.di
+package com.coderops.mmeter.di
 
 import com.coderops.bases.NavigationRes
 import com.coderops.bases.StringsRes
-import com.coderops.melodymeter.resourses_helper.NavigationResImpl
-import com.coderops.melodymeter.resourses_helper.StringsResImpl
+import com.coderops.mmeter.resourses_helper.NavigationResImpl
+import com.coderops.mmeter.resourses_helper.StringsResImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

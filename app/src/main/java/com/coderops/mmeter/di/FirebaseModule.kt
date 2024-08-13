@@ -1,4 +1,4 @@
-package com.coderops.melodymeter.di
+package com.coderops.mmeter.di
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

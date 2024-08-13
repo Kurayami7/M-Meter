@@ -1,4 +1,4 @@
-package com.coderops.melodymeter
+package com.coderops.mmeter
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,7 +9,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.coderops.melodymeter.databinding.ActivityMainBinding
+import com.coderops.mmeter.databinding.ActivityMainBinding
 import com.coderops.ui.sound_when_play.SoundManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint

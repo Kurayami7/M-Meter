@@ -1,4 +1,4 @@
-package com.coderops.melodymeter.resourses_helper
+package com.coderops.mmeter.resourses_helper
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

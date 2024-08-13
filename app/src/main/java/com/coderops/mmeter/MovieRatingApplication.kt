@@ -1,7 +1,7 @@
-package com.coderops.melodymeter
+package com.coderops.mmeter
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MusicRatingApplication: Application()
+class MovieRatingApplication: Application()
