@@ -55,12 +55,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="@dimen/spacing_medium_16dp"
-            android:isIndicator="true"
+            android:isIndicator="false"
             android:numStars="5"
             android:rating="@{item.upperUiState.rating}"
             android:stepSize="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chip_group_genere" />
+            app:layout_constraintTop_toBottomOf="@+id/chip_group_genere"
+            />
 
         <TextView
             android:id="@+id/text_view_rate_this_movie"
