@@ -1,5 +1,5 @@
-# Melody-Meter
-A mobile and pervasive computing project delivering a community-driven music rating application
+# M-Meter
+A mobile and pervasive computing project delivering a community-driven movie rating application. This app had a vision to be 'MelodyMeter', a song and music rating application, but as of now, builds on top of an open-source project to integrate firebase along with front-end touchups and improvements.
 
 ## How To Get It Up & Running:
 1. Sign up into TMDB and head over to their API page: https://www.themoviedb.org/settings/api
