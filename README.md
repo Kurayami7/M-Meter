@@ -36,3 +36,8 @@ For Windows:
 
 ### Open a new Command Prompt window.
 Type adb and press Enter. You should see a list of adb commands if everything is set up correctly.
+
+## Sample Images From the App:
+![image](https://github.com/user-attachments/assets/7aea2e30-9ce3-4769-8928-df86dac1f72a)
+![image](https://github.com/user-attachments/assets/fe5dfc9a-2cd6-44fe-900a-70ab8e254b8a)
+
