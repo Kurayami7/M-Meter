@@ -6,7 +6,23 @@ A mobile and pervasive computing project delivering a community-driven movie rat
 2. Register for an API [No longer required] and navigate into core/data/remote/build.gradle. Look carefully at how the build is set up.
 3. Navigate into local.properties and set the 'API_KEY="XYZ" ## Change this to your own API key' to the API you received after registration.
 4. In the local.properties, change this directory to the directory where you have your Android SDK: sdk.dir=C\:\\Users\\areaf\\AppData\\Local\\Android\\Sdk
-5. Build the project and run it. 
+5. Build the project and run it.
+   
+## Architecture:
+M_Meter is an app designed to enhance your movie experience, perfect for movie lovers of 
+all ages. 
+
+### Primary Features: 
+* Trending Movie Suggestions: Stay updated with the latest hits.  
+* Personal Accounts: Create an account and add your favorite Movies to your list. 
+* Inbuilt Dark Mode: Enjoy a sleek dark mode for a comfortable viewing experience. 
+* Movie Ratings: Rate movies and view ratings from other users. 
+* Search Feature: Easily search for any movie, show, or actor. 
+* Watch List: Recently seen movies will be displayed on the profile page > watch.
+
+![image](https://github.com/user-attachments/assets/f0c7f0a3-364a-4c76-823c-e85bff599e0f)
+![image](https://github.com/user-attachments/assets/ff4cbcc6-4855-4341-a8b6-1ef7e9056d58)
+
 
 ## How To Use The Android Debug Bridge (adb) 
 1. Locate the adb executable
