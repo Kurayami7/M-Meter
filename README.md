@@ -47,3 +47,8 @@ https://github.com/user-attachments/assets/da474861-60d9-49aa-b732-c9a42a5f83ac
 ![image](https://github.com/user-attachments/assets/3bcd8988-9b4d-4682-b4d8-acf7f20586bc)
 ![image](https://github.com/user-attachments/assets/399fbe01-6a3e-4c79-a4b5-4b72e7ad0e35)
 ![image](https://github.com/user-attachments/assets/d19d333b-a0b3-4ff4-8e8a-9e5622cd7c0c)
+
+## No License (Public Domain)
+This project is released into the public domain. You are free to use, modify, and distribute it in any form, with or without attribution. No permission is required. Note that this project builds on a publicly available application available on GitHub, you may find the origninal repository here: https://github.com/MohamedElgohary88/MovieApp/blob/develop/README.md
+
+Feel free to build upon this project, replicate it, or incorporate it into your own projects. No limitations or restrictions apply.
