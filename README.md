@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/42e28a84-3cc1-4f5f-8999-238d3b54b845
 # M-Meter
 A mobile and pervasive computing project delivering a community-driven movie rating application. This app had a vision to be 'MelodyMeter', a song and music rating application, but as of now, builds on top of an open-source project to integrate firebase along with front-end touchups and improvements.
 
