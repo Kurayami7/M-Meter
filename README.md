@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/42e28a84-3cc1-4f5f-8999-238d3b54b845
 # M-Meter
 A mobile and pervasive computing project delivering a community-driven movie rating application. This app had a vision to be 'MelodyMeter', a song and music rating application, but as of now, builds on top of an open-source project to integrate firebase along with front-end touchups and improvements.
 
@@ -37,6 +39,9 @@ For Windows:
 ### Open a new Command Prompt window.
 Type adb and press Enter. You should see a list of adb commands if everything is set up correctly.
 
+## Video demo:
+https://github.com/user-attachments/assets/da474861-60d9-49aa-b732-c9a42a5f83ac
+
 ## Sample Images From the App:
 ![image](https://github.com/user-attachments/assets/e387c71f-6fdd-438d-a207-fa7c49aae328)
 ![image](https://github.com/user-attachments/assets/8f92b586-ed29-43cf-9b28-5705fca3562d)
@@ -44,5 +49,3 @@ Type adb and press Enter. You should see a list of adb commands if everything is
 ![image](https://github.com/user-attachments/assets/3bcd8988-9b4d-4682-b4d8-acf7f20586bc)
 ![image](https://github.com/user-attachments/assets/399fbe01-6a3e-4c79-a4b5-4b72e7ad0e35)
 ![image](https://github.com/user-attachments/assets/d19d333b-a0b3-4ff4-8e8a-9e5622cd7c0c)
-
-
